@@ -1803,3 +1803,7 @@ svg {
     min-height:310px;
   }
 }
+/* REMOVE DARK SHADE FROM COMPETITION SLIDES */
+.hero-slide:not(:first-child)::before{
+  display:none;
+}
