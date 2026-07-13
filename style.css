@@ -1820,3 +1820,12 @@ svg {
   object-position:center;
   background:#070009;
 }
+/* Remove overlay from competition slides */
+.hero-slide::before{
+    display:none;
+}
+
+/* Put the overlay back ONLY on the first Marv slide */
+.hero-slide:first-child::before{
+    display:block;
+}
