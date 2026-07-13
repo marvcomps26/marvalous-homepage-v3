@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#070009" />
+<title>Marv's Ice Break</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ST39WS2DBB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ST39WS2DBB');
+</script>
+
+<style>
+*{box-sizing:border-box}
+:root{
+  --purple:#8d28ff;
+  --ice:#79e8ff;
+  --gold:#ffd76a;
+  --dark:#050008;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(121,232,255,.28),transparent 25%),
+    radial-gradient(circle at 92% 3%,rgba(157,59,255,.36),transparent 30%),
+    radial-gradient(circle at 50% 55%,rgba(39,148,255,.12),transparent 30%),
+    linear-gradient(180deg,#13002b 0%,#070011 52%,#020005 100%);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(rgba(255,255,255,.45) 1px,transparent 1px),
+    radial-gradient(rgba(121,232,255,.25) 1.4px,transparent 1.4px);
+  background-size:38px 38px,74px 74px;
+  opacity:.23;
+}
+.app{
+  width:min(430px,100%);
+  margin:0 auto;
+  min-height:100vh;
+  padding:18px 15px 30px;
+  position:relative;
+}
+.glass{
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(22,0,48,.72),rgba(5,0,15,.86));
+  border:1px solid rgba(121,232,255,.30);
+  box-shadow:0 0 28px rgba(121,232,255,.14),inset 0 0 24px rgba(255,255,255,.035);
+  backdrop-filter:blur(10px);
+}
+.top-strip{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  align-items:center;
+  margin:0 auto 12px;
+  padding:9px 12px;
+  width:max-content;
+  max-width:100%;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(121,232,255,.24);
+  color:rgba(255,255,255,.82);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+.hero{
+  min-height:180px;
+  position:relative;
+  overflow:hidden;
+  padding:20px 18px;
+  margin-bottom:14px;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  right:-48px;
+  bottom:-65px;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(121,232,255,.38),rgba(141,40,255,.18),transparent 66%);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,rgba(255,255,255,.08),transparent 25%,transparent 70%,rgba(121,232,255,.08));
+  pointer-events:none;
+}
+.hero-marv{
+  position:absolute;
+  right:-18px;
+  bottom:-30px;
+  width:235px;
+  max-height:240px;
+  object-fit:contain;
+  z-index:2;
+  filter:
+    drop-shadow(0 0 18px rgba(0,225,255,.8))
+    drop-shadow(0 0 40px rgba(147,51,234,.5));
+}
+.kicker{
+  position:relative;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,215,106,.10);
+  border:1px solid rgba(255,215,106,.30);
+  color:var(--gold);
+  font-size:11px;
+  font-weight:1000;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+h1{
+  position:relative;
+  z-index:3;
+  margin:10px 132px 0 0;
+  font-size:43px;
+  line-height:.86;
+  letter-spacing:-1.5px;
+  text-transform:uppercase;
+  text-shadow:0 0 24px rgba(121,232,255,.55);
+}
+.welcome{
+  position:relative;
+  z-index:3;
+  margin:12px 145px 0 0;
+  color:rgba(255,255,255,.78);
+  font-size:14.5px;
+  line-height:1.25;
+}
+.code-card{
+  padding:15px;
+  margin-bottom:14px;
+}
+.code-title{
+  font-size:18px;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+.code-sub{
+  color:rgba(255,255,255,.65);
+  font-size:13px;
+  margin:6px 0 12px;
+}
+.row{display:flex;gap:10px}
+input{
+  flex:1;
+  min-width:0;
+  padding:15px 14px;
+  border-radius:18px;
+  border:1px solid rgba(121,232,255,.32);
+  outline:none;
+  background:rgba(5,0,15,.72);
+  color:#fff;
+  font-size:16px;
+}
+#codeInput{text-transform:uppercase}
+button{
+  border:0;
+  border-radius:18px;
+  padding:15px 17px;
+  font-weight:1000;
+  color:#080018;
+  background:linear-gradient(135deg,#ffffff,#bff6ff,#57dcff);
+  box-shadow:0 0 20px rgba(121,232,255,.38);
+  cursor:pointer;
+}
+.status{
+  margin-top:10px;
+  min-height:20px;
+  font-size:13px;
+  color:rgba(255,255,255,.68);
+  text-align:center;
+}
+.stage{
+  padding:14px;
+  margin-bottom:14px;
+}
+.game-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+.game-title{
+  font-size:25px;
+  line-height:.95;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+.game-sub{
+  color:rgba(255,255,255,.64);
+  font-size:13px;
+  margin-top:6px;
+}
+.live-pill{
+  flex:0 0 auto;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(255,215,106,.1);
+  border:1px solid rgba(255,215,106,.28);
+  color:var(--gold);
+  font-size:11px;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+.board{
+  position:relative;
+  padding:13px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(191,246,255,.16),transparent 35%),
+    linear-gradient(145deg,rgba(13,48,84,.74),rgba(4,0,14,.92) 60%,rgba(37,0,60,.82));
+  border:1px solid rgba(191,246,255,.34);
+  box-shadow:0 0 24px rgba(121,232,255,.20),inset 0 0 28px rgba(255,255,255,.045);
+  overflow:hidden;
+  will-change:transform;
+}
+.board:before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.08);
+  pointer-events:none;
+}
+.banner{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  margin-bottom:10px;
+  padding:10px;
+  border-radius:20px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(121,232,255,.20);
+  color:#dffbff;
+  font-size:12px;
+  font-weight:1000;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+.ice-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.ice{
+  height:118px;
+  border-radius:25px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(121,232,255,.18),transparent 45%),
+    linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  border:1px solid rgba(191,246,255,.30);
+  box-shadow:0 0 17px rgba(121,232,255,.20),inset 0 0 18px rgba(255,255,255,.05);
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:.25s;
+  animation:iceBreath 2.8s ease-in-out infinite;
+}
+@keyframes iceBreath{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 17px rgba(121,232,255,.20), inset 0 0 18px rgba(255,255,255,.05);
+  }
+  50%{
+    transform:scale(1.035);
+    box-shadow:0 0 28px rgba(121,232,255,.45), inset 0 0 24px rgba(255,255,255,.10);
+  }
+}  
+.ice img{
+  width:143%;
+  height:143%;
+  object-fit:contain;
+  pointer-events:none;
+  filter:drop-shadow(0 0 16px rgba(121,232,255,.75));
+  transition:.25s;
+}
+.ice:before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,255,255,.10),transparent 40%,rgba(121,232,255,.05));
+  pointer-events:none;
+}
+.ice:after{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+  transform:rotate(25deg) translateX(-120%);
+  transition:.7s;
+}
+.ice:not(.disabled):hover:after{transform:rotate(25deg) translateX(120%)}
+.ice.picked{
+  transform:scale(1.07);
+  box-shadow:0 0 42px rgba(191,246,255,.9),inset 0 0 24px rgba(255,255,255,.14);
+}
+.ice.picked img{transform:scale(1.07)}
+.ice:active{
+  transform:scale(.94);
+  filter:brightness(1.2);
+}
+.ice.shatter{animation:shake .36s linear}
+@keyframes shake{
+  0%,100%{transform:scale(1.07) translateX(0)}
+  25%{transform:scale(1.09) translateX(-4px) rotate(-2deg)}
+  50%{transform:scale(1.09) translateX(4px) rotate(2deg)}
+  75%{transform:scale(1.09) translateX(-3px) rotate(-1deg)}
+}
+@keyframes screenShake{
+  0%{transform:translate(0,0);}
+  20%{transform:translate(-4px,2px);}
+  40%{transform:translate(4px,-2px);}
+  60%{transform:translate(-3px,2px);}
+  80%{transform:translate(3px,-1px);}
+  100%{transform:translate(0,0);}
+}
+
+.board.shake{
+  animation:screenShake .25s;
+}
+.board.flash{
+  animation:flashBlue .35s;
+}
+
+@keyframes flashBlue{
+  0%{
+    box-shadow:0 0 24px rgba(121,232,255,.20);
+  }
+  50%{
+    box-shadow:
+      0 0 80px rgba(121,232,255,.95),
+      inset 0 0 45px rgba(191,246,255,.45);
+  }
+  100%{
+    box-shadow:0 0 24px rgba(121,232,255,.20);
+  }
+}
+.ice.disabled{
+  opacity:.24;
+  pointer-events:none;
+  filter:grayscale(.55);
+}
+.ice-glow{
+  position:absolute;
+  inset:-35px;
+  display:none;
+  pointer-events:none;
+  background:url("assets/icebreak/ice-glow.png") center/contain no-repeat;
+  z-index:4;
+  opacity:.98;
+}
+.ice.picked .ice-glow{display:block}
+.ice-sparkles{
+  position:absolute;
+  inset:-55px;
+  display:none;
+  pointer-events:none;
+  background:url("assets/icebreak/ice-sparkles.png") center/contain no-repeat;
+  z-index:5;
+  opacity:1;
+}
+
+.ice.shatter .ice-sparkles{
+  display:block;
+  animation:sparkBurst .55s ease-out forwards;
+}
+
+@keyframes sparkBurst{
+  0%{
+    transform:scale(.4);
+    opacity:0;
+  }
+  40%{
+    opacity:1;
+  }
+  100%{
+    transform:scale(1.5);
+    opacity:0;
+  }
+}
+.locked .board{opacity:.52}
+.locked .ice{pointer-events:none}
+.hint{
+  text-align:center;
+  margin-top:11px;
+  font-size:12px;
+  color:rgba(255,255,255,.56);
+}
+.info-card{
+  padding:15px;
+  margin-bottom:14px;
+}
+.info-title{
+  font-size:18px;
+  font-weight:1000;
+  text-transform:uppercase;
+  margin-bottom:12px;
+  text-align:center;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.stat{
+  text-align:center;
+  padding:12px 6px;
+  border-radius:18px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(121,232,255,.24);
+}
+.stat b{
+  display:block;
+  color:#bff6ff;
+  font-size:23px;
+}
+.stat span{
+  font-size:11px;
+  color:rgba(255,255,255,.68);
+}
+.stat-icon-circle{
+  font-size:24px;
+  margin-bottom:7px;
+  filter:drop-shadow(0 0 10px rgba(121,232,255,.75));
+}
+.back{
+  display:block;
+  width:max-content;
+  margin:16px auto 0;
+  padding:14px 24px;
+  border-radius:18px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:1000;
+  background:linear-gradient(135deg,#57dcff,#8d28ff);
+  box-shadow:0 0 24px rgba(121,232,255,.34);
+}
+.footer{
+  text-align:center;
+  margin-top:12px;
+  font-size:11px;
+  color:rgba(255,255,255,.42);
+}
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  z-index:99;
+}
+.modal.show{display:flex}
+.box{
+  position:relative;
+  width:min(380px,100%);
+  text-align:center;
+  border-radius:32px;
+  padding:26px 18px;
+  background:linear-gradient(180deg,#071d3a,#070009);
+  border:1px solid rgba(191,243,255,.48);
+  box-shadow:0 0 50px rgba(101,207,255,.22),0 0 34px rgba(139,44,255,.32);
+}
+.closeModal{
+    position:absolute;
+    top:14px;
+    right:14px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+    cursor:pointer;
+  }
+.box h2{
+  margin:0 0 8px;
+  font-size:32px;
+  text-transform:uppercase;
+}
+.result{
+  margin:16px 0;
+  color:#ffd76a;
+  font-size:27px;
+  font-weight:1000;
+  text-transform:uppercase;
+  text-shadow:0 0 14px rgba(255,215,106,.72);
+}
+.small{
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  line-height:1.4;
+}
+@keyframes blueFlash{
+  0%{opacity:0;}
+  20%{opacity:.8;}
+  100%{opacity:0;}
+}
+
+.screen-flash{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle,rgba(121,232,255,.75),rgba(121,232,255,.2),transparent 70%);
+  opacity:0;
+  z-index:9999;
+}
+
+.screen-flash.active{
+  animation:blueFlash .35s ease-out;
+}
+  
+</style>
+</head>
+
+<body>
+<main class="app">
+
+  <div class="top-strip">🏆 Weekly League Points • 🧊 Daily Free Play</div>
+
+  <section class="hero glass">
+    <div class="kicker">❄️ New Daily Game</div>
+    <h1>Marv's Ice Break</h1>
+    <p class="welcome">🧊 Smash the ice to reveal today's prize!</p>
+    <img src="assets/icebreak/marv-ice.png" class="hero-marv" alt="Marv holding ice">
+  </section>
+
+  <section class="code-card glass">
+    <div class="code-title">Enter Today’s Code</div>
+    <div class="code-sub">Get today’s code from the Marvalous App homepage.</div>
+    <div class="row">
+      <input id="codeInput" placeholder="Enter daily code">
+      <button onclick="unlockGame()">Unlock</button>
+    </div>
+    <div id="status" class="status">Loading today’s settings...</div>
+  </section>
+
+  <section id="gameArea" class="stage glass locked">
+    <div class="game-head">
+      <div>
+        <div class="game-title">Break The Ice</div>
+        <div class="game-sub">One block is hiding today’s reward...</div>
+      </div>
+      <div class="live-pill">Free Play</div>
+    </div>
+
+    <div class="board">
+      <div class="banner">Tap one ice block to reveal your prize</div>
+
+      <div class="ice-grid">
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+        <button class="ice" onclick="breakIce(this)"><span class="ice-glow"></span><img src="assets/icebreak/ice-normal.png" alt="Ice block"></button>
+      </div>
+    </div>
+
+    <div class="hint">Smash one ice block. Come back tomorrow for another chance 💜</div>
+  </section>
+
+  <section class="info-card glass">
+    <div class="info-title">Your Marvalous Stats 💜</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon-circle">🧊</div>
+        <b id="totalPlays">0</b>
+        <span>Ice Breaks</span>
+      </div>
+      <div class="stat">
+        <div class="stat-icon-circle">🏆</div>
+        <b id="totalWins">0</b>
+        <span>Prizes Won</span>
+      </div>
+      <div class="stat">
+        <div class="stat-icon-circle">🔥</div>
+        <b id="currentStreak">0</b>
+        <span>Streak</span>
+      </div>
+    </div>
+  </section>
+
+  <a class="back" href="index.html">← Back To Marvalous Hub</a>
+  <div class="footer">One play per device per daily code.</div>
+</main>
+
+<form name="scratch-claim" method="POST" data-netlify="true" hidden>
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <input type="text" name="prize">
+  <input type="text" name="dailyCode">
+  <input type="text" name="minSpend">
+  <input type="text" name="expiry">
+</form>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <button class="closeModal" onclick="closeModal()">✕</button>
+    <h2 id="modalTitle">Result</h2>
+    <div class="result" id="resultText"></div>
+    <p class="small" id="resultSmall"></p>
+    <button id="doneBtn" onclick="closeModal()">Done</button>
+  </div>
+</div>
+
+<audio id="tapSound" preload="auto">
+  <source src="assets/icebreak/ice-tap.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="crackSound" preload="auto">
+  <source src="assets/icebreak/ice-crack.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="smashSound" preload="auto">
+  <source src="assets/icebreak/ice-smash.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const SETTINGS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSlaiXI-x0C_wLvxmELI21rTu9uFR87MYtx9gqV_z_Z3hZ5nOCQBnb9No6i9MtZyqBD3c9wTo1tmz6x/pub?output=csv";
+
+let DAILY_CODE = "MARVDAILY";
+let PRIZES = [];
+const gameArea = document.getElementById("gameArea");
+const statusBox = document.getElementById("status");
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const resultText = document.getElementById("resultText");
+const resultSmall = document.getElementById("resultSmall");
+
+const tapSound = document.getElementById("tapSound");
+const crackSound = document.getElementById("crackSound");
+const smashSound = document.getElementById("smashSound");
+
+function playSound(sound){
+  if(!sound) return;
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+}
+
+let playKey = "";
+let revealed = false;
+let currentPrize = null;
+
+function updateStats(){
+  document.getElementById("totalPlays").textContent = localStorage.getItem("marvIceTotalPlays") || "0";
+  document.getElementById("totalWins").textContent = localStorage.getItem("marvIceTotalWins") || "0";
+  document.getElementById("currentStreak").textContent = localStorage.getItem("marvIceStreak") || "0";
+}
+
+function addPlayStats(won){
+  const plays = Number(localStorage.getItem("marvIceTotalPlays") || 0) + 1;
+  localStorage.setItem("marvIceTotalPlays", plays);
+
+  const streak = Number(localStorage.getItem("marvIceStreak") || 0) + 1;
+  localStorage.setItem("marvIceStreak", streak);
+
+  if(won){
+    const wins = Number(localStorage.getItem("marvIceTotalWins") || 0) + 1;
+    localStorage.setItem("marvIceTotalWins", wins);
+  }
+
+  updateStats();
+}
+
+function csvSplit(row){
+  const matched = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+  return matched ? matched.map(v=>v.replace(/^"|"$/g,"").trim()) : [];
+}
+  
+async function loadSettings(){
+  try{
+    const res = await fetch(SETTINGS_CSV_URL + "&t=" + Date.now(), {cache:"no-store"});
+    const text = await res.text();
+    const lines = text.trim().split(/\r?\n/);
+
+    const settingsRow = csvSplit(lines[0]);
+DAILY_CODE = (settingsRow[1] || "").trim().toUpperCase();
+
+PRIZES = [];
+
+    for(let i=4; i<lines.length; i++){
+      if(!lines[i].trim()) continue;
+      const row = csvSplit(lines[i]);
+      PRIZES.push({
+        prize: row[0],
+        chance: parseFloat(row[1]),
+        claimType: row[2],
+        minSpend: row[3],
+        expiry: row[4],
+        code: row[5] || ""
+      });
+    }
+
+    playKey = `marvalous_ice_break_played_${DAILY_CODE}`;
+
+    statusBox.textContent = localStorage.getItem(playKey)
+      ? "Come back tomorrow for another Ice Break."
+      : "Today’s settings loaded.";
+
+  } catch(e){
+    statusBox.textContent = "Settings could not load. Try again shortly.";
+  }
+}
+
+function pickPrize(){
+  let roll = Math.random() * 100;
+  let total = 0;
+
+  for(const item of PRIZES){
+    total += Number(item.chance || 0);
+    if(roll <= total) return item;
+  }
+
+  return { prize:"TRY AGAIN", chance:0, claimType:"none", minSpend:"", expiry:"", code:"" };
+}
+
+function resetIce(){
+  document.querySelectorAll(".ice").forEach(i => {
+    i.classList.remove("disabled", "picked", "shatter");
+    const img = i.querySelector("img");
+    if(img) img.src = "assets/icebreak/ice-normal.png";
+  });
+}
+
+function unlockGame(){
+  const entered = document.getElementById("codeInput").value.trim().toUpperCase();
+
+  if(entered !== DAILY_CODE){
+    statusBox.textContent = "Wrong code. Check the Facebook daily post.";
+    return;
+  }
+
+  if(localStorage.getItem(playKey)){
+    statusBox.textContent = "You’ve already used today’s Ice Break on this device.";
+    gameArea.classList.add("locked");
+    return;
+  }
+
+  if(typeof gtag === "function") gtag('event','ice_break_played');
+
+  revealed = false;
+  resetIce();
+  statusBox.textContent = "Unlocked. Break your lucky ice block.";
+  gameArea.classList.remove("locked");
+}
+
+function breakIce(el){
+  if(gameArea.classList.contains("locked") || revealed) return;
+
+  revealed = true;
+  currentPrize = pickPrize();
+
+  document.querySelectorAll(".ice").forEach(i => {
+    if(i !== el) i.classList.add("disabled");
+  });
+
+  const img = el.querySelector("img");
+  el.classList.add("picked");
+
+  playSound(tapSound);
+  localStorage.setItem(playKey,"yes");
+  if (navigator.vibrate) {
+  navigator.vibrate(25);
+  }
+
+setTimeout(() => {
+  playSound(crackSound);
+  img.src = "assets/icebreak/ice-cracked.png";
+}, 250);
+
+setTimeout(() => {
+  playSound(smashSound);
+
+  if (navigator.vibrate) {
+    navigator.vibrate([40, 25, 60]);
+  }
+const board = document.querySelector(".board");
+board.classList.add("shake");
+setTimeout(() => board.classList.remove("shake"), 250);
+  el.classList.add("shatter");
+  img.src = "assets/icebreak/ice-shattered.png";
+}, 750);
+
+  
+  
+
+  setTimeout(showResult, 1450);
+}
+
+function copyPrizeCode(){
+  const code = currentPrize && currentPrize.code ? currentPrize.code : "";
+  if(!code) return;
+
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.getElementById("copyCodeBtn");
+    if(btn) btn.textContent = "Copied!";
+  }).catch(() => {
+    alert("Copy failed. Please manually copy the code.");
+  });
+}
+
+function showResult(){
+  const won = currentPrize && currentPrize.prize.toUpperCase() !== "TRY AGAIN";
+  addPlayStats(won);
+
+  if(won){
+    modalTitle.textContent = "Winner!";
+    resultText.textContent = currentPrize.prize;
+
+    const hasCode = currentPrize.code && currentPrize.code.trim() !== "";
+    const isWalletBonus =
+      currentPrize.prize.includes("ADD £1") ||
+      currentPrize.prize.includes("ADD £5") ||
+      currentPrize.prize.includes("ADD £10");
+
+    resultSmall.innerHTML = hasCode ? `
+
+<div style="margin:12px 0;padding:14px;border-radius:16px;background:rgba(101,207,255,.12);border:1px solid rgba(191,243,255,.35);">
+  <div style="font-size:12px;color:rgba(255,255,255,.72);margin-bottom:6px;">Your discount code:</div>
+  <div style="font-size:24px;font-weight:1000;color:#ffd76a;">${currentPrize.code}</div>
+  <button id="copyCodeBtn" onclick="copyPrizeCode()" style="margin-top:10px;">Copy Code</button>
+</div>
+
+Use this code within 24 hours 💜<br><br>
+
+${currentPrize.minSpend && currentPrize.minSpend != "0" ? `Minimum spend £${currentPrize.minSpend}<br><br>` : ""}
+
+<input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<button id="claimBtn" onclick="submitClaim()">Claim Prize</button>
+
+` : isWalletBonus ? `
+
+🎉 Congratulations! 🎉<br><br>
+
+You've won:<br><br>
+
+<strong>${currentPrize.prize}</strong><br><br>
+
+Enter your details below and we'll add your bonus when you top up your Marvalous wallet 💜<br><br>
+${currentPrize.expiry && currentPrize.expiry !== "none" ? `Valid for ${currentPrize.expiry}<br><br>` : ""}
+<input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<button id="claimBtn" onclick="submitClaim()">Claim Prize</button>
+
+` : `
+
+🎉 Congratulations! 🎉<br><br>
+
+You've won:<br><br>
+
+<strong>${currentPrize.prize}</strong><br><br>
+
+Enter your details below and we'll check and apply your reward 💜<br><br>
+
+<input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<button id="claimBtn" onclick="submitClaim()">Claim Prize</button>
+
+`;
+
+  } else {
+    modalTitle.textContent = "Try Again!";
+    resultText.textContent = "No Prize Today";
+
+    resultSmall.innerHTML = `
+No prize today 😢<br><br>
+
+💜 If you're taking part in the Marvalous Weekly League, enter your details below to claim your +3 daily league points.<br><br>
+
+Not in the league? Simply press Done and come back tomorrow for another free Ice Break.<br><br>
+
+<input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<button id="claimBtn" onclick="submitClaim()">Claim +3 League Points</button>
+`;
+  }
+
+  if(won){
+    document.getElementById("doneBtn").style.display = "none";
+  } else {
+    document.getElementById("doneBtn").style.display = "inline-block";
+  }
+
+  modal.classList.add("show");
+  gameArea.classList.add("locked");
+  statusBox.textContent = "You’ve used today’s Ice Break on this device.";
+}
+
+function submitClaim(){
+  const name = document.getElementById("claimName").value.trim();
+  const email = document.getElementById("claimEmail").value.trim();
+
+  if(!name || !email){
+    alert("Please enter your name and email.");
+    return;
+  }
+
+  const claimBtn = document.getElementById("claimBtn");
+  claimBtn.disabled = true;
+  claimBtn.textContent = "Sending...";
+
+  fetch("https://script.google.com/macros/s/AKfycbwqv0mOcwHVa2AaGzvwMLjw-nqV4LonCg3-MXpDcgcMbhmw2ORo4JmO8JiCxXZkBScC/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      prize: currentPrize.prize === "TRY AGAIN"
+        ? "League Points Claim (+3)"
+        : currentPrize.prize,
+      dailyCode: DAILY_CODE,
+      minSpend: currentPrize.minSpend || "",
+      expiry: currentPrize.expiry || "",
+      code: currentPrize.code || ""
+    })
+  }).then(response => {
+    if (!response.ok) throw new Error("Failed");
+
+    modalTitle.textContent = "Claim Sent!";
+    resultText.textContent = "";
+
+    if(currentPrize.prize === "TRY AGAIN"){
+      resultSmall.textContent = "Your league points claim has been logged successfully 💜";
+    } else {
+      resultSmall.textContent = currentPrize.code
+        ? "Your win has been logged successfully 💜 Your discount code is ready to use."
+        : "Your claim has been logged successfully 💜 We'll check and apply your bonus shortly.";
+    }
+
+    document.getElementById("doneBtn").style.display = "inline-block";
+    document.getElementById("doneBtn").textContent = "Done";
+  }).catch(() => {
+    claimBtn.disabled = false;
+    claimBtn.textContent = "Claim Prize";
+    alert("Something went wrong sending your claim.");
+  });
+}
+
+function closeModal(){
+  modal.classList.remove("show");
+}
+
+resetIce();
+loadSettings();
+
+updateStats();
+</script>
+</body>
+  </html>
