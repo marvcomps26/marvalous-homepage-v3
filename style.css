@@ -1752,19 +1752,34 @@ svg {
     width: 23px;
     height: 23px;
   }
-  }
+  /* WORKING HERO SLIDER */
+
 .hero-slider{
+  position:relative;
+  min-height:340px;
+  margin-bottom:28px;
+  overflow:hidden;
+  border-radius:var(--radius-xl);
   touch-action:pan-y;
   user-select:none;
   -webkit-user-select:none;
 }
 
 .hero-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  min-height:340px;
+
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-}
 
+  transition:
+    opacity .55s ease,
+    visibility .55s ease;
+}
+}
 .hero-slide.active{
   opacity:1;
   visibility:visible;
@@ -1773,4 +1788,18 @@ svg {
 
 .hero-image{
   pointer-events:none;
+}
+
+@media (min-width:700px){
+  .hero-slider,
+  .hero-slide{
+    min-height:390px;
+  }
+}
+
+@media (max-width:560px){
+  .hero-slider,
+  .hero-slide{
+    min-height:310px;
+  }
 }
