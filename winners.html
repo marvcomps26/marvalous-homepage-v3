@@ -333,84 +333,191 @@ body:before{
   box-shadow:0 0 35px rgba(180,56,255,.65);
 }
 
-/* MATCH HOME BOTTOM NAV */
-.bottom-nav{
-  position:fixed;
-  left:22px;
-  right:22px;
-  bottom:18px;
-  z-index:999;
-  height:92px;
-  display:grid;
-  grid-template-columns:1fr 1fr 90px 1fr 1fr;
-  align-items:end;
-  padding:10px 14px 18px;
-  background:rgba(20,20,26,.55);
-  backdrop-filter:blur(35px);
-  -webkit-backdrop-filter:blur(35px);
-  border-radius:28px;
+/* MATCH HOMEPAGE BOTTOM NAV */
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  z-index: 9999;
+
+  width: min(calc(100% - 24px), 680px);
+  min-height: 88px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 88px 1fr 1fr;
+  align-items: end;
+
+  padding: 10px 11px 15px;
+
+  transform: translateX(-50%);
+  border-radius: 29px;
+
+  background: rgba(20, 12, 24, 0.76);
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
   box-shadow:
-    0 -8px 30px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,.05);
-  overflow:visible;
+    0 -10px 35px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.bottom-nav a{
-  min-height:56px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  text-decoration:none;
-  color:rgba(255,255,255,.42);
-  font-size:9px;
-  font-weight:600;
+.bottom-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.22),
+      transparent
+    );
 }
 
-.bottom-nav a.active{
-  color:#ffd35a;
+.nav-link {
+  min-width: 0;
+  min-height: 58px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  color: rgba(255, 255, 255, 0.40);
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 800;
 }
 
-.nav-icon{
-  width:30px;
-  height:30px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+.nav-link svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.centre-action{
-  width:76px;
-  height:76px;
-  margin:0 auto;
-  transform:translateY(-42px);
-  border-radius:50%;
-  background:transparent;
-  position:relative;
-  overflow:visible;
+.nav-link.active {
+  color: #b638ff;
+
+  text-shadow:
+    0 0 12px rgba(180, 56, 255, 0.48);
 }
 
-.centre-logo{
-  width:58px;
-  height:58px;
-  object-fit:contain;
-  border-radius:50%;
-  display:block;
-  filter:drop-shadow(0 0 8px rgba(180,56,255,.65)) drop-shadow(0 8px 16px rgba(0,0,0,.55));
+.nav-main-action {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateY(-26px);
+
+  text-decoration: none;
+  color: #ffd35a;
 }
 
-.centre-action b{
-  position:absolute;
-  bottom:-24px;
-  left:50%;
-  transform:translateX(-50%);
-  color:#ffd35a;
-  font-size:14px;
-  font-weight:900;
-  white-space:nowrap;
+.nav-main-action::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(123, 24, 255, 0.50),
+      rgba(123, 24, 255, 0.08) 55%,
+      transparent 70%
+    );
+
+  filter: blur(9px);
+}
+
+.nav-main-action img {
+  position: relative;
+  z-index: 2;
+
+  width: 66px;
+  height: 66px;
+
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+
+  filter:
+    drop-shadow(0 0 12px rgba(180, 56, 255, 0.65))
+    drop-shadow(0 12px 18px rgba(0, 0, 0, 0.65));
+}
+
+.nav-main-action span {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 3px;
+  color: #ffd35a;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.72);
+}
+
+@media (max-width: 560px) {
+  .bottom-nav {
+    min-height: 84px;
+    grid-template-columns: 1fr 1fr 80px 1fr 1fr;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .nav-main-action {
+    width: 70px;
+    height: 70px;
+    transform: translateY(-24px);
+  }
+
+  .nav-main-action img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .bottom-nav {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    transform: none;
+  }
+
+  .nav-link {
+    font-size: 7px;
+  }
+
+  .nav-link svg {
+    width: 23px;
+    height: 23px;
+  }
 }
 </style>
 </head>
@@ -466,38 +573,56 @@ body:before{
 </main>
 
 <nav class="bottom-nav">
-  <a href="index.html">
-    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"></path></svg>
-    Home
-  </a>
 
-  <a href="scratch.html">
-    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M11 13H13"></path><path d="M12 9V3"></path>
-      <path d="M20.1526 20.9174C22.0143 20.3289 22.5597 16.7547 21.3708 12.9344C20.1819 9.11398 17.709 6.49405 15.8474 7.08259C14.6972 7.44619 14.6438 8.86174 13.6968 9.378C13.473 9.5 13.1595 9.5 12.5324 9.5H11.4676C10.8405 9.5 10.527 9.5 10.3032 9.378C9.35625 8.86174 9.30278 7.44619 8.15264 7.08259C6.29102 6.49405 3.8181 9.11398 2.62922 12.9344C1.44035 16.7547 1.98573 20.3289 3.84736 20.9174C5.20631 21.347 6.891 20.067 8.16417 17.8583C9.01333 16.3851 9.39787 16 11.1039 16H12.8961C14.6021 16 14.9867 16.3851 15.8358 17.8583C17.109 20.067 18.7937 21.347 20.1526 20.9174Z"></path>
+  <a href="index.html" class="nav-link">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 11 12 3l9 8v10h-6v-6H9v6H3Z"></path>
     </svg>
-    Daily Game
+    <span>Home</span>
   </a>
 
-  <a class="centre-action" href="https://marvalouscompetitions.co.uk/">
-    <img src="logo.png" class="centre-logo" alt="Marvalous">
-    <b>Play</b>
+  <a href="icebreak-v2.html" class="nav-link">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 8h8"></path>
+      <path d="M12 4v4"></path>
+      <path d="M7 11h10a5 5 0 0 1 5 5v1a3 3 0 0 1-5.2 2L15 17H9l-1.8 2A3 3 0 0 1 2 17v-1a5 5 0 0 1 5-5Z"></path>
+    </svg>
+    <span>Games</span>
   </a>
 
-  <a class="active" href="winners.html">
-    <svg viewBox="0 0 24 24" class="nav-icon">
-      <path d="M8 4h8v4a4 4 0 0 1-8 0V4z"></path>
+  <a
+    href="https://marvalouscompetitions.co.uk/"
+    class="nav-main-action"
+    aria-label="Play Marvalous competitions"
+  >
+    <img src="logo.png" alt="Play">
+    <span>Play</span>
+  </a>
+
+  <a href="winners.html" class="nav-link active">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"></path>
       <path d="M6 6H4a4 4 0 0 0 4 4"></path>
       <path d="M18 6h2a4 4 0 0 1-4 4"></path>
-      <path d="M12 12v5M8 20h8"></path>
+      <path d="M12 12v5"></path>
+      <path d="M8 20h8"></path>
     </svg>
-    Winners
+    <span>Winners</span>
   </a>
 
-  <a href="https://marvalouscompetitions.co.uk/i/the-marvalous-league">
-    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>
-    League
+  <a
+    href="https://marvalouscompetitions.co.uk/i/the-marvalous-league"
+    class="nav-link"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 20V10"></path>
+      <path d="M10 20V4"></path>
+      <path d="M16 20v-7"></path>
+      <path d="M22 20H2"></path>
+    </svg>
+    <span>League</span>
   </a>
+
 </nav>
 
 <div id="winnerPopup" class="winner-popup" onclick="closeWinner()">
