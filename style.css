@@ -1753,3 +1753,24 @@ svg {
     height: 23px;
   }
   }
+.hero-slider{
+  touch-action:pan-y;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+.hero-slide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.hero-slide.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.hero-image{
+  pointer-events:none;
+}
