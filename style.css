@@ -1797,13 +1797,26 @@ svg {
   }
 }
 
-@media (max-width:560px){
-  .hero-slider,
-  .hero-slide{
-    min-height:310px;
-  }
 }
 /* REMOVE DARK SHADE FROM COMPETITION SLIDES */
 .hero-slide:not(:first-child)::before{
   display:none;
+}
+/* MAKE HERO SLIDES FIT SQUARE IMAGES */
+
+.hero-slider{
+  width:100%;
+  aspect-ratio:1 / 1;
+  min-height:0;
+}
+
+.hero-slide{
+  min-height:0;
+  height:100%;
+}
+
+.hero-slide:not(:first-child) .hero-image{
+  object-fit:contain;
+  object-position:center;
+  background:#070009;
 }
