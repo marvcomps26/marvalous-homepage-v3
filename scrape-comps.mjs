@@ -50,7 +50,6 @@ await page.waitForTimeout(3000);
       const url = link.href;
 
       if (!url || seen.has(url)) continue;
-      seen.add(url);
 
       const card =
         link.closest("article") ||
@@ -100,7 +99,7 @@ await page.waitForTimeout(3000);
       const totalTickets = Number(
         soldMatch[2].replace(/,/g, "")
       );
-
+      seen.add(url);
       results.push({
         title,
         url,
