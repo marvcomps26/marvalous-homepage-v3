@@ -1829,3 +1829,75 @@ svg {
 .hero-slide:first-child::before{
     display:block;
 }
+/* LIVE COMPETITION DATA */
+
+.competition-details h3{
+  min-height:44px;
+  margin:0 0 13px;
+  font-size:15px;
+  line-height:1.25;
+}
+
+.competition-progress-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:7px;
+  color:rgba(255,255,255,.62);
+  font-size:9px;
+  font-weight:700;
+}
+
+.competition-progress{
+  width:100%;
+  height:8px;
+  margin-bottom:14px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+}
+
+.competition-progress-fill{
+  height:100%;
+  min-width:2px;
+  border-radius:inherit;
+  background:linear-gradient(
+    90deg,
+    #7b18ff,
+    #b638ff,
+    #ff35c8
+  );
+  box-shadow:0 0 13px rgba(180,56,255,.62);
+}
+
+.competition-enter{
+  min-height:41px;
+  margin-top:13px;
+  padding:0 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,#7b18ff,#b638ff);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.competition-enter b{
+  font-size:22px;
+  line-height:1;
+}
+
+.competition-tag{
+  background:linear-gradient(135deg,#7b18ff,#ff35c8);
+  box-shadow:0 0 17px rgba(180,56,255,.42);
+}
+
+.competition-empty{
+  width:100%;
+  padding:25px;
+  text-align:center;
+  color:rgba(255,255,255,.62);
+}
