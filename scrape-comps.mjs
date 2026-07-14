@@ -99,9 +99,13 @@ try {
         url.split("/competition/")[1]
           ?.split(/[?#]/)[0] || "";
 
-      const title = slug
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, letter => letter.toUpperCase());
+    let title = slug
+  .replace(/-/g, " ")
+  .replace(/\b\w/g, letter => letter.toUpperCase());
+
+title = title
+  .replace(/\bPs(\d+)/gi, "£$1")
+  .replace(/\bP(\d+)\b/gi, "$1p");
 
       const images = Array.from(link.querySelectorAll("img"));
 
