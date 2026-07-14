@@ -38,93 +38,97 @@ await page.waitForTimeout(3000);
     throw new Error("Website returned the Access Blocked page.");
   }
 
-  const competitions = await page.evaluate(() => {
-    const links = Array.from(
-      document.querySelectorAll('a[href*="/competition/"]')
+ const competitions = await page.evaluate(() => {
+  const slides = Array.from(
+    document.querySelectorAll(".swiper-slide")
+  );
+
+  const results = new Map();
+
+  for (const slide of slides) {
+    const link = slide.querySelector(
+      'a[href*="/competition/"]'
     );
 
-    const seen = new Set();
-    const results = [];
+    if (!link) continue;
 
-    for (const link of links) {
-      const url = link.href;
+    const url = link.href;
+    const text = (slide.innerText || "")
+      .replace(/\s+/g, " ")
+      .trim();
 
-      if (!url || seen.has(url)) continue;
+    const soldMatch = text.match(
+      /(\d[\d,]*)\s*\/\s*(\d[\d,]*)/
+    );
 
-      const card =
-        link.closest("article") ||
-        link.closest(".swiper-slide") ||
-        link.closest("[class*='rounded']") ||
-        link.parentElement;
+    if (!soldMatch) continue;
 
-      if (!card) continue;
+    const image =
+      slide.querySelector("img")?.src || "";
 
-      const text = (card.innerText || "")
-        .replace(/\s+/g, " ")
-        .trim();
+    const percentMatch = text.match(
+      /(\d+(?:\.\d+)?)%\s*Sold/i
+    );
 
-      const soldMatch = text.match(
-        /(\d[\d,]*)\s*\/\s*(\d[\d,]*)/
+    const priceMatch = text.match(
+      /£\s*(\d+(?:\.\d+)?)\s*(?:Per Ticket|Ticket)/i
+    );
+
+    const instantWinsMatch = text.match(
+      /Instant Wins?\s*(\d[\d,]*)/i
+    );
+
+    const titleElement =
+      slide.querySelector(
+        "#threedee-info p, h1, h2, h3, h4"
       );
 
-      if (!soldMatch) continue;
+    let title =
+      titleElement?.textContent
+        ?.replace(/\s+/g, " ")
+        .trim() || "";
 
-      const image =
-        card.querySelector("img")?.src ||
-        link.querySelector("img")?.src ||
-        "";
-
-      const percentMatch = text.match(
-        /(\d+(?:\.\d+)?)%\s*Sold/i
-      );
-
-      const priceMatch = text.match(
-        /£\s*(\d+(?:\.\d+)?)\s*(?:Per Ticket|Ticket)?/i
-      );
-
-      const instantWinsMatch = text.match(
-        /Instant Wins?\s*(\d[\d,]*)/i
-      );
-
-      const titleElement = card.querySelector("h1,h2,h3,h4");
-      const title =
-        titleElement?.textContent?.replace(/\s+/g, " ").trim() ||
-        link.getAttribute("aria-label") ||
-        "Competition";
-
-      const ticketsSold = Number(
-        soldMatch[1].replace(/,/g, "")
-      );
-
-      const totalTickets = Number(
-        soldMatch[2].replace(/,/g, "")
-      );
-      seen.add(url);
-      results.push({
-        title,
-        url,
-        image,
-        ticketsSold,
-        totalTickets,
-        percentSold: percentMatch
-          ? Number(percentMatch[1])
-          : Number(
-              ((ticketsSold / totalTickets) * 100).toFixed(2)
-            ),
-        ticketPrice: priceMatch
-          ? Number(priceMatch[1])
-          : null,
-        instantWins: instantWinsMatch
-          ? Number(
-              instantWinsMatch[1].replace(/,/g, "")
-            )
-          : null
-      });
+    if (!title) {
+      title = url
+        .split("/competition/")[1]
+        ?.replace(/-/g, " ")
+        ?.replace(/\b\w/g, letter =>
+          letter.toUpperCase()
+        ) || "Competition";
     }
 
-    return results;
-  });
+    const ticketsSold = Number(
+      soldMatch[1].replace(/,/g, "")
+    );
 
+    const totalTickets = Number(
+      soldMatch[2].replace(/,/g, "")
+    );
+
+    results.set(url, {
+      title,
+      url,
+      image,
+      ticketsSold,
+      totalTickets,
+      percentSold: percentMatch
+        ? Number(percentMatch[1])
+        : Number(
+            ((ticketsSold / totalTickets) * 100).toFixed(2)
+          ),
+      ticketPrice: priceMatch
+        ? Number(priceMatch[1])
+        : null,
+      instantWins: instantWinsMatch
+        ? Number(
+            instantWinsMatch[1].replace(/,/g, "")
+          )
+        : null
+    });
+  }
+
+  return Array.from(results.values());
+}); 
   if (!competitions.length) {
     throw new Error("No live competitions were found.");
   }
