@@ -39,134 +39,56 @@ await page.waitForTimeout(3000);
   }
 
 const competitions = await page.evaluate(() => {
-  const enterLinks = Array.from(
-    document.querySelectorAll('a[href*="/competition/"]')
-  ).filter(link =>
-    /enter now/i.test(link.innerText || link.textContent || "")
-  );
+  const cards = Array.from(document.querySelectorAll(".swiper-slide"));
 
-  const results = new Map();
+  const competitions = [];
 
-  for (const link of enterLinks) {
-    const url = link.href;
-    if (!url) continue;
+  for (const card of cards) {
+    const link = card.querySelector('a[href*="/competition/"]');
+    if (!link) continue;
 
-    let card = link.parentElement;
+    const text = (card.innerText || "").replace(/\s+/g, " ");
 
-    // Move upwards until we reach the smallest container
-    // containing both "Sold" and the ticket total.
-    while (card && card !== document.body) {
-      const text = (card.innerText || "")
-        .replace(/\s+/g, " ")
-        .trim();
-
-      if (
-        /\d+(?:\.\d+)?%\s*Sold/i.test(text) &&
-        /\d[\d,]*\s*\/\s*\d[\d,]*/.test(text)
-      ) {
-        break;
-      }
-
-      card = card.parentElement;
-    }
-
-    if (!card || card === document.body) continue;
-
-    const text = (card.innerText || "")
-      .replace(/\s+/g, " ")
-      .trim();
-
-    const soldMatch = text.match(
-      /(\d[\d,]*)\s*\/\s*(\d[\d,]*)/
-    );
-
+    const soldMatch = text.match(/(\d[\d,]*)\s*\/\s*(\d[\d,]*)/);
     if (!soldMatch) continue;
 
-    const percentMatch = text.match(
-      /(\d+(?:\.\d+)?)%\s*Sold/i
-    );
+    const percentMatch = text.match(/(\d+(?:\.\d+)?)%\s*Sold/i);
 
-    const instantWinsMatch = text.match(
-      /Instant Wins?\s*([\d,]+)/i
-    );
+    const instantWinsMatch = text.match(/Instant Wins?\s*([\d,]+)/i);
 
     const priceMatch =
-      text.match(/£\s*(\d+(?:\.\d+)?)\s*per ticket/i) ||
-      text.match(/(\d+(?:\.\d+)?)p\s*per ticket/i);
+      text.match(/£\s*(\d+(?:\.\d+)?)\s*Per Ticket/i) ||
+      text.match(/(\d+(?:\.\d+)?)p\s*Per Ticket/i);
 
-    const image =
-      card.querySelector('img[src*="static.rafflex.io"]')?.src ||
-      card.querySelector("img")?.src ||
-      "";
-
-    const slug =
-      url.split("/competition/")[1]?.split(/[?#]/)[0] || "";
-
-    let title = "";
-
-    // Find a useful title near the ENTER NOW link.
-    const titleCandidates = Array.from(
-      card.querySelectorAll("h1,h2,h3,h4,p")
-    )
-      .map(element =>
-        (element.textContent || "")
-          .replace(/\s+/g, " ")
-          .trim()
-      )
-      .filter(value =>
-        value &&
-        value.length >= 6 &&
-        value.length <= 180 &&
-        !/enter now|sold|instant wins|per ticket|day|hrs|mins|secs/i.test(value)
-      );
-
-    title =
-      titleCandidates[titleCandidates.length - 1] ||
-      slug
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, letter => letter.toUpperCase()) ||
+    const title =
+      card.querySelector("p.font-display")?.textContent?.trim() ||
+      card.querySelector("h1,h2,h3,h4")?.textContent?.trim() ||
       "Competition";
 
-    const ticketsSold = Number(
-      soldMatch[1].replace(/,/g, "")
-    );
-
-    const totalTickets = Number(
-      soldMatch[2].replace(/,/g, "")
-    );
-
-    let ticketPrice = null;
-
-    if (priceMatch) {
-      ticketPrice = priceMatch[0]
-        .toLowerCase()
-        .includes("p per ticket")
-        ? Number(priceMatch[1]) / 100
-        : Number(priceMatch[1]);
-    }
-
-    results.set(url, {
+    competitions.push({
       title,
-      url,
-      image,
-      ticketsSold,
-      totalTickets,
-      percentSold: percentMatch
-        ? Number(percentMatch[1])
-        : Number(
-            ((ticketsSold / totalTickets) * 100).toFixed(2)
-          ),
-      ticketPrice,
+      url: link.href,
+      image: card.querySelector("img")?.src || "",
+      ticketsSold: Number(soldMatch[1].replace(/,/g, "")),
+      totalTickets: Number(soldMatch[2].replace(/,/g, "")),
+      percentSold: percentMatch ? Number(percentMatch[1]) : 0,
+      ticketPrice: priceMatch
+        ? (priceMatch[0].includes("p")
+            ? Number(priceMatch[1]) / 100
+            : Number(priceMatch[1]))
+        : null,
       instantWins: instantWinsMatch
         ? Number(instantWinsMatch[1].replace(/,/g, ""))
         : null
     });
   }
 
-  return Array.from(results.values());
-}); 
+  return competitions;
+});
+    
+    
 
-  
+    
   if (!competitions.length) {
     throw new Error("No live competitions were found.");
   }
