@@ -80,13 +80,10 @@ if (heroSlides.length > 1) {
   startHeroSlider();
 }
 fetch("https://marvalouscompetitions.co.uk/")
-  .then(response => {
-    console.log("Response:", response.status);
-    return response.text();
+  .then(r => r.text())
+  .then(data => {
+    alert("SUCCESS\n\n" + data.substring(0,100));
   })
-  .then(html => {
-    console.log("Website loaded:", html.includes("229/25000"));
-  })
-  .catch(error => {
-    console.error("Website fetch failed:", error);
+  .catch(err => {
+    alert("FAILED\n\n" + err);
   });
