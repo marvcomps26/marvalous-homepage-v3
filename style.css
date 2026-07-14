@@ -2028,15 +2028,35 @@ svg {
 }
 
 .today-winners-number{
-  min-width:70px;
+  width:86px;
+  height:86px;
+  flex-shrink:0;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
 
   color:#fff;
-  font-size:52px;
+  font-size:42px;
   line-height:1;
   font-weight:900;
-  text-align:right;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,211,90,.10),
+      rgba(255,211,90,.03) 58%,
+      transparent 70%
+    );
+
+  border:1px solid rgba(255,211,90,.85);
+
+  box-shadow:
+    0 0 10px rgba(255,211,90,.40),
+    0 0 24px rgba(255,211,90,.24),
+    inset 0 0 18px rgba(255,211,90,.08);
 
   text-shadow:
-    0 0 18px rgba(255,211,90,.18),
-    0 4px 18px rgba(0,0,0,.45);
+    0 0 12px rgba(255,211,90,.28);
 }
