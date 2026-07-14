@@ -79,11 +79,3 @@ if (heroSlides.length > 1) {
   showHeroSlide(0);
   startHeroSlider();
 }
-fetch("https://marvalouscompetitions.co.uk/")
-  .then(r => r.text())
-  .then(data => {
-    alert("SUCCESS\n\n" + data.substring(0,100));
-  })
-  .catch(err => {
-    alert("FAILED\n\n" + err);
-  });
