@@ -147,8 +147,8 @@ try {
     .trim();
 
   const match =
-  text.match(/Instant Winners[\s\S]*?Today'?s Count[\s\S]*?(\d+)/i) ||
-  text.match(/Today'?s Count[\s\S]*?(\d+)/i);
+  text.match(/Instant Winners[\s\S]*?Today(?:'|’)?s Count[\s\S]*?(\d+)/i) ||
+  text.match(/Today(?:'|’)?s Count[\s\S]*?(\d+)/i);
 
   return match ? Number(match[1]) : null;
 });
