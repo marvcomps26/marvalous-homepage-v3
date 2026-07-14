@@ -1984,3 +1984,64 @@ svg {
     font-size: 6px;
   }
 }
+/* TODAY'S WINNERS */
+
+.today-winners-card{
+  margin:24px 0 8px;
+  padding:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+
+  border-radius:24px;
+
+  background:
+    radial-gradient(circle at top right, rgba(255,211,90,.12), transparent 40%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+
+  border:1px solid rgba(255,211,90,.18);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 16px 35px rgba(0,0,0,.32);
+}
+
+.today-winners-copy span{
+  display:block;
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.today-winners-copy h2{
+  margin:6px 0 4px;
+  font-size:22px;
+}
+
+.today-winners-copy p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.today-winners-number{
+  width:90px;
+  height:90px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:linear-gradient(135deg,var(--purple),var(--purple-bright));
+
+  color:#fff;
+  font-size:36px;
+  font-weight:900;
+
+  box-shadow:
+    0 0 30px rgba(180,56,255,.45);
+}
