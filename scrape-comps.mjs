@@ -141,11 +141,24 @@ try {
     throw new Error("No live competitions were found.");
   }
 
-  const output = {
-    updatedAt: new Date().toISOString(),
-    count: competitions.length,
-    competitions
-  };
+  const todaysWinnerCount = await page.evaluate(() => {
+  const text = (document.body.innerText || "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const match =
+  text.match(/Instant Winners[\s\S]*?Today'?s Count[\s\S]*?(\d+)/i) ||
+  text.match(/Today'?s Count[\s\S]*?(\d+)/i);
+
+  return match ? Number(match[1]) : null;
+});
+
+const output = {
+  updatedAt: new Date().toISOString(),
+  todaysWinnerCount,
+  count: competitions.length,
+  competitions
+};
 
   await fs.writeFile(
     "live-comps.json",
