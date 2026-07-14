@@ -18,11 +18,15 @@ try {
   });
 
   await page.goto(WEBSITE_URL, {
-    waitUntil: "networkidle",
-    timeout: 90000
-  });
+  waitUntil: "domcontentloaded",
+  timeout: 60000
+});
 
-  await page.waitForTimeout(4000);
+await page.waitForSelector('a[href*="/competition/"]', {
+  timeout: 30000
+});
+
+await page.waitForTimeout(3000);
 
   const pageTitle = await page.title();
   const bodyText = await page.locator("body").innerText();
