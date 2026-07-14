@@ -38,22 +38,41 @@ await page.waitForTimeout(3000);
     throw new Error("Website returned the Access Blocked page.");
   }
 
- const competitions = await page.evaluate(() => {
-  const slides = Array.from(
-    document.querySelectorAll(".swiper-slide")
+const competitions = await page.evaluate(() => {
+  const enterLinks = Array.from(
+    document.querySelectorAll('a[href*="/competition/"]')
+  ).filter(link =>
+    /enter now/i.test(link.innerText || link.textContent || "")
   );
 
   const results = new Map();
 
-  for (const slide of slides) {
-    const link = slide.querySelector(
-      'a[href*="/competition/"]'
-    );
-
-    if (!link) continue;
-
+  for (const link of enterLinks) {
     const url = link.href;
-    const text = (slide.innerText || "")
+    if (!url) continue;
+
+    let card = link.parentElement;
+
+    // Move upwards until we reach the smallest container
+    // containing both "Sold" and the ticket total.
+    while (card && card !== document.body) {
+      const text = (card.innerText || "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (
+        /\d+(?:\.\d+)?%\s*Sold/i.test(text) &&
+        /\d[\d,]*\s*\/\s*\d[\d,]*/.test(text)
+      ) {
+        break;
+      }
+
+      card = card.parentElement;
+    }
+
+    if (!card || card === document.body) continue;
+
+    const text = (card.innerText || "")
       .replace(/\s+/g, " ")
       .trim();
 
@@ -63,39 +82,50 @@ await page.waitForTimeout(3000);
 
     if (!soldMatch) continue;
 
-    const image =
-      slide.querySelector("img")?.src || "";
-
     const percentMatch = text.match(
       /(\d+(?:\.\d+)?)%\s*Sold/i
     );
 
-    const priceMatch = text.match(
-      /£\s*(\d+(?:\.\d+)?)\s*(?:Per Ticket|Ticket)/i
-    );
-
     const instantWinsMatch = text.match(
-      /Instant Wins?\s*(\d[\d,]*)/i
+      /Instant Wins?\s*([\d,]+)/i
     );
 
-    const titleElement =
-      slide.querySelector(
-        "#threedee-info p, h1, h2, h3, h4"
+    const priceMatch =
+      text.match(/£\s*(\d+(?:\.\d+)?)\s*per ticket/i) ||
+      text.match(/(\d+(?:\.\d+)?)p\s*per ticket/i);
+
+    const image =
+      card.querySelector('img[src*="static.rafflex.io"]')?.src ||
+      card.querySelector("img")?.src ||
+      "";
+
+    const slug =
+      url.split("/competition/")[1]?.split(/[?#]/)[0] || "";
+
+    let title = "";
+
+    // Find a useful title near the ENTER NOW link.
+    const titleCandidates = Array.from(
+      card.querySelectorAll("h1,h2,h3,h4,p")
+    )
+      .map(element =>
+        (element.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim()
+      )
+      .filter(value =>
+        value &&
+        value.length >= 6 &&
+        value.length <= 180 &&
+        !/enter now|sold|instant wins|per ticket|day|hrs|mins|secs/i.test(value)
       );
 
-    let title =
-      titleElement?.textContent
-        ?.replace(/\s+/g, " ")
-        .trim() || "";
-
-    if (!title) {
-      title = url
-        .split("/competition/")[1]
-        ?.replace(/-/g, " ")
-        ?.replace(/\b\w/g, letter =>
-          letter.toUpperCase()
-        ) || "Competition";
-    }
+    title =
+      titleCandidates[titleCandidates.length - 1] ||
+      slug
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase()) ||
+      "Competition";
 
     const ticketsSold = Number(
       soldMatch[1].replace(/,/g, "")
@@ -104,6 +134,16 @@ await page.waitForTimeout(3000);
     const totalTickets = Number(
       soldMatch[2].replace(/,/g, "")
     );
+
+    let ticketPrice = null;
+
+    if (priceMatch) {
+      ticketPrice = priceMatch[0]
+        .toLowerCase()
+        .includes("p per ticket")
+        ? Number(priceMatch[1]) / 100
+        : Number(priceMatch[1]);
+    }
 
     results.set(url, {
       title,
@@ -116,19 +156,17 @@ await page.waitForTimeout(3000);
         : Number(
             ((ticketsSold / totalTickets) * 100).toFixed(2)
           ),
-      ticketPrice: priceMatch
-        ? Number(priceMatch[1])
-        : null,
+      ticketPrice,
       instantWins: instantWinsMatch
-        ? Number(
-            instantWinsMatch[1].replace(/,/g, "")
-          )
+        ? Number(instantWinsMatch[1].replace(/,/g, ""))
         : null
     });
   }
 
   return Array.from(results.values());
 }); 
+
+  
   if (!competitions.length) {
     throw new Error("No live competitions were found.");
   }
