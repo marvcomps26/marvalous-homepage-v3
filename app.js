@@ -129,3 +129,47 @@ function escapeHtml(value = "") {
 }
 
 loadLiveCompetitions();
+
+/* TODAY'S WINNER COUNT */
+
+async function loadTodaysWinnerCount() {
+  const winnerCountElement = document.getElementById("todaysWinnerCount");
+
+  if (!winnerCountElement) return;
+
+  try {
+    const response = await fetch(`live-comps.json?t=${Date.now()}`, {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("Could not load today's winner count.");
+    }
+
+    const data = await response.json();
+    const finalCount = Number(data.todaysWinnerCount || 0);
+
+    let currentCount = 0;
+    const duration = 700;
+    const startTime = performance.now();
+
+    function animateCount(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      currentCount = Math.round(finalCount * progress);
+
+      winnerCountElement.textContent = currentCount;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateCount);
+      }
+    }
+
+    requestAnimationFrame(animateCount);
+
+  } catch (error) {
+    console.error("Today's winner count failed:", error);
+    winnerCountElement.textContent = "—";
+  }
+}
+
+loadTodaysWinnerCount();
