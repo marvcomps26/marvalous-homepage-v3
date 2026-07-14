@@ -2028,20 +2028,15 @@ svg {
 }
 
 .today-winners-number{
-  width:90px;
-  height:90px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:50%;
-
-  background:linear-gradient(135deg,var(--purple),var(--purple-bright));
+  min-width:70px;
 
   color:#fff;
-  font-size:36px;
+  font-size:52px;
+  line-height:1;
   font-weight:900;
+  text-align:right;
 
-  box-shadow:
-    0 0 30px rgba(180,56,255,.45);
+  text-shadow:
+    0 0 18px rgba(255,211,90,.18),
+    0 4px 18px rgba(0,0,0,.45);
 }
