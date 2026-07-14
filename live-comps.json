@@ -1,1 +1,16 @@
-[]
+{
+  "updatedAt": "2026-07-14T07:30:19.740Z",
+  "count": 1,
+  "competitions": [
+    {
+      "title": "Marvalous Silver Comp 100g Silver Bar + 5 Instant Silver Wins",
+      "url": "https://marvalouscompetitions.co.uk/competition/marvs-marvalous-bundle",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/546/conversions/01KXC1BAZRM36N3HRY6AEC2VC2-large.jpg",
+      "ticketsSold": 0,
+      "totalTickets": 20000,
+      "percentSold": 0,
+      "ticketPrice": 1,
+      "instantWins": 5
+    }
+  ]
+}
