@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-07-16T08:32:54.635Z",
-  "todaysWinnerCount": 1,
+  "updatedAt": "2026-07-16T10:34:59.414Z",
+  "todaysWinnerCount": 13,
   "count": 8,
   "competitions": [
     {
       "title": "Nadir Silver Bar 100g 5x 10g Silver Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/nadir-silver-bar-100g-5x-10g-silver-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/552/conversions/01KXG1S9GR738N7N80Z6SPNT0P-large.jpg",
-      "ticketsSold": 195,
+      "ticketsSold": 495,
       "totalTickets": 40000,
-      "percentSold": 0,
+      "percentSold": 1,
       "ticketPrice": 0.05,
       "instantWins": 5
     },
@@ -27,7 +27,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 273,
+      "ticketsSold": 285,
       "totalTickets": 30000,
       "percentSold": 1,
       "ticketPrice": 1,
@@ -67,7 +67,7 @@
       "title": "Lisa Whaaaaaats £1000 Safecracker Challenge £2000 Cash Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/lisa-whaaaaaats-ps1000-safecracker-challenge-ps2000-cash-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/484/conversions/01KVK2CPRGT1GNDEN2GAEYG4XH-large.jpg",
-      "ticketsSold": 11953,
+      "ticketsSold": 12123,
       "totalTickets": 200000,
       "percentSold": 6,
       "ticketPrice": 0.05,
