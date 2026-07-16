@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-16T06:04:33.086Z",
-  "todaysWinnerCount": 0,
+  "updatedAt": "2026-07-16T08:32:54.635Z",
+  "todaysWinnerCount": 1,
   "count": 8,
   "competitions": [
     {
@@ -27,7 +27,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 272,
+      "ticketsSold": 273,
       "totalTickets": 30000,
       "percentSold": 1,
       "ticketPrice": 1,
@@ -47,7 +47,7 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 11838,
+      "ticketsSold": 11948,
       "totalTickets": 150000,
       "percentSold": 8,
       "ticketPrice": 0.1,
