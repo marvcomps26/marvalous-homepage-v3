@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-17T11:09:41.369Z",
-  "todaysWinnerCount": 0,
+  "updatedAt": "2026-07-17T12:20:59.197Z",
+  "todaysWinnerCount": 65,
   "count": 8,
   "competitions": [
     {
@@ -27,7 +27,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 290,
+      "ticketsSold": 355,
       "totalTickets": 30000,
       "percentSold": 1,
       "ticketPrice": 1,
@@ -67,9 +67,9 @@
       "title": "Lisa Whaaaaaats £1000 Safecracker Challenge £2000 Cash Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/lisa-whaaaaaats-ps1000-safecracker-challenge-ps2000-cash-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/484/conversions/01KVK2CPRGT1GNDEN2GAEYG4XH-large.jpg",
-      "ticketsSold": 12684,
+      "ticketsSold": 13934,
       "totalTickets": 200000,
-      "percentSold": 6,
+      "percentSold": 7,
       "ticketPrice": 0.05,
       "instantWins": 95
     },
