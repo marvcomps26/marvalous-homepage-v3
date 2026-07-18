@@ -1,8 +1,18 @@
 {
-  "updatedAt": "2026-07-18T08:11:22.514Z",
-  "todaysWinnerCount": 0,
-  "count": 8,
+  "updatedAt": "2026-07-18T09:44:21.087Z",
+  "todaysWinnerCount": 196,
+  "count": 9,
   "competitions": [
+    {
+      "title": "Marvs Cashpot Drop",
+      "url": "https://marvalouscompetitions.co.uk/competition/marvs-cashpot-drop",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/554/conversions/01KXT622YG38BGMFACAHG3J2RQ-large.jpg",
+      "ticketsSold": 957,
+      "totalTickets": 150000,
+      "percentSold": 1,
+      "ticketPrice": 0.05,
+      "instantWins": 22141
+    },
     {
       "title": "Nadir Silver Bar 100g 5x 10g Silver Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/nadir-silver-bar-100g-5x-10g-silver-instant-wins",
@@ -27,9 +37,9 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 407,
+      "ticketsSold": 482,
       "totalTickets": 30000,
-      "percentSold": 1,
+      "percentSold": 2,
       "ticketPrice": 1,
       "instantWins": 30000
     },
@@ -47,7 +57,7 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 12554,
+      "ticketsSold": 12671,
       "totalTickets": 150000,
       "percentSold": 8,
       "ticketPrice": 0.1,
