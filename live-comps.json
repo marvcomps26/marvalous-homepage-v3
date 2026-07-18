@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-07-18T17:39:37.279Z",
-  "todaysWinnerCount": 364,
+  "updatedAt": "2026-07-18T18:36:14.087Z",
+  "todaysWinnerCount": 376,
   "count": 9,
   "competitions": [
     {
       "title": "Marvs Cashpot Drop",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-cashpot-drop",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/554/conversions/01KXT622YG38BGMFACAHG3J2RQ-large.jpg",
-      "ticketsSold": 1815,
+      "ticketsSold": 1877,
       "totalTickets": 150000,
       "percentSold": 1,
       "ticketPrice": 0.05,
@@ -37,7 +37,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 484,
+      "ticketsSold": 485,
       "totalTickets": 30000,
       "percentSold": 2,
       "ticketPrice": 1,
