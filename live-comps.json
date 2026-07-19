@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-19T12:35:51.729Z",
-  "todaysWinnerCount": 36,
+  "updatedAt": "2026-07-19T14:11:16.955Z",
+  "todaysWinnerCount": 63,
   "count": 8,
   "competitions": [
     {
@@ -27,7 +27,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 524,
+      "ticketsSold": 551,
       "totalTickets": 30000,
       "percentSold": 2,
       "ticketPrice": 1,
@@ -37,7 +37,7 @@
       "title": "Apple Or Android The Choice Is Yours",
       "url": "https://marvalouscompetitions.co.uk/competition/apple-or-android-the-choice-is-yours",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/509/conversions/01KWP5ZFD1C3TEH9CTB6ERKEWY-large.jpg",
-      "ticketsSold": 2457,
+      "ticketsSold": 2507,
       "totalTickets": 50000,
       "percentSold": 5,
       "ticketPrice": 0.1,
@@ -47,9 +47,9 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 13609,
+      "ticketsSold": 14256,
       "totalTickets": 150000,
-      "percentSold": 9,
+      "percentSold": 10,
       "ticketPrice": 0.1,
       "instantWins": 148
     },
@@ -67,9 +67,9 @@
       "title": "Lisa Whaaaaaats £1000 Safecracker Challenge £2000 Cash Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/lisa-whaaaaaats-ps1000-safecracker-challenge-ps2000-cash-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/484/conversions/01KVK2CPRGT1GNDEN2GAEYG4XH-large.jpg",
-      "ticketsSold": 14890,
+      "ticketsSold": 15110,
       "totalTickets": 200000,
-      "percentSold": 7,
+      "percentSold": 8,
       "ticketPrice": 0.05,
       "instantWins": 95
     },
@@ -77,9 +77,9 @@
       "title": "Have A Takeaway On Marvalous Free To Enter Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/have-a-takeaway-on-marvalous-free-to-enter-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/498/conversions/01KW1J7E8QXYNRK7JNTJXW4NS4-large.jpg",
-      "ticketsSold": 124,
+      "ticketsSold": 126,
       "totalTickets": 1000,
-      "percentSold": 12,
+      "percentSold": 13,
       "ticketPrice": 0,
       "instantWins": null
     }
