@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T11:27:51.796Z",
+  "updatedAt": "2026-07-20T13:30:05.992Z",
   "todaysWinnerCount": 18,
   "count": 8,
   "competitions": [
@@ -47,7 +47,7 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 15425,
+      "ticketsSold": 15525,
       "totalTickets": 150000,
       "percentSold": 10,
       "ticketPrice": 0.1,
@@ -57,7 +57,7 @@
       "title": "Stee Lees Cha Cha Ching",
       "url": "https://marvalouscompetitions.co.uk/competition/stee-lees-cha-cha-ching",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/502/conversions/01KWH6H60XBJ9WXCNDGVWDK1TQ-large.jpg",
-      "ticketsSold": 6293,
+      "ticketsSold": 6393,
       "totalTickets": 150000,
       "percentSold": 4,
       "ticketPrice": 0.1,
@@ -67,9 +67,9 @@
       "title": "Lisa Whaaaaaats £1000 Safecracker Challenge £2000 Cash Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/lisa-whaaaaaats-ps1000-safecracker-challenge-ps2000-cash-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/484/conversions/01KVK2CPRGT1GNDEN2GAEYG4XH-large.jpg",
-      "ticketsSold": 15465,
+      "ticketsSold": 17005,
       "totalTickets": 200000,
-      "percentSold": 8,
+      "percentSold": 9,
       "ticketPrice": 0.05,
       "instantWins": 95
     },
