@@ -384,7 +384,6 @@ let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 
 window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
   deferredPrompt = e;
 
   if (installBtn) {
