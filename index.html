@@ -412,11 +412,19 @@ OneSignalDeferred.push(async function(OneSignal) {
             <h3>Monthly League</h3>
             <p>Earn points and rise through the rankings.</p>
 
-            <div class="feature-link">
-              View league
-              <b>›</b>
-            </div>
-          </div>
+           <div class="league-button-stack">
+
+  <div class="feature-link" onclick="event.preventDefault(); openLeagueForm();">
+    League signup
+    <b>›</b>
+  </div>
+
+  <div class="feature-link league-view-button">
+    View league
+    <b>›</b>
+  </div>
+
+           </div> 
 
         </a>
 
