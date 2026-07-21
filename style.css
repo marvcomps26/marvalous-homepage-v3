@@ -2422,3 +2422,13 @@ button.quick-access-card span{
 .install-card:active {
   transform: scale(.985);
 }
+.install-card,
+.install-card h2,
+.install-card p,
+.install-card span {
+  color: #fff;
+}
+
+.install-card .install-copy > span {
+  color: var(--gold);
+}
