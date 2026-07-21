@@ -2432,3 +2432,16 @@ button.quick-access-card span{
 .install-card .install-copy > span {
   color: var(--gold);
 }
+.league-button-stack{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.league-button-stack .feature-link{
+  margin-top:0;
+}
+
+.league-view-button{
+  color:#1a001
