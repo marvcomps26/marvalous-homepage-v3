@@ -2401,3 +2401,14 @@ svg {
   text-decoration:none;
   font-weight:800;
 }
+.quick-access-card{
+  color:#fff;
+}
+
+button.quick-access-card strong{
+  color:#fff;
+}
+
+button.quick-access-card span{
+  color:rgba(255,255,255,.48);
+}
