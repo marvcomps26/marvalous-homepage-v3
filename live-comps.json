@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-21T12:43:50.585Z",
-  "todaysWinnerCount": 5,
-  "count": 9,
+  "updatedAt": "2026-07-21T14:48:57.105Z",
+  "todaysWinnerCount": 155,
+  "count": 10,
   "competitions": [
     {
       "title": "Marvs Back To School",
@@ -11,6 +11,16 @@
       "totalTickets": 65000,
       "percentSold": 0,
       "ticketPrice": 0.05,
+      "instantWins": null
+    },
+    {
+      "title": "Arctic Marvs Site Credit Bonanza",
+      "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-site-credit-bonanza",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/582/conversions/01KY2HF0Y2MHZDQCYRC6KVHGC6-large.jpg",
+      "ticketsSold": 0,
+      "totalTickets": 550000,
+      "percentSold": 0,
+      "ticketPrice": 0.01,
       "instantWins": null
     },
     {
@@ -37,7 +47,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 596,
+      "ticketsSold": 746,
       "totalTickets": 30000,
       "percentSold": 2,
       "ticketPrice": 1,
@@ -57,7 +67,7 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 16302,
+      "ticketsSold": 16714,
       "totalTickets": 150000,
       "percentSold": 11,
       "ticketPrice": 0.1,
@@ -67,17 +77,17 @@
       "title": "Stee Lees Cha Cha Ching",
       "url": "https://marvalouscompetitions.co.uk/competition/stee-lees-cha-cha-ching",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/502/conversions/01KWH6H60XBJ9WXCNDGVWDK1TQ-large.jpg",
-      "ticketsSold": 6546,
+      "ticketsSold": 6596,
       "totalTickets": 150000,
       "percentSold": 4,
-      "ticketPrice": 0.1,
+      "ticketPrice": 0.05,
       "instantWins": 148
     },
     {
       "title": "Lisa Whaaaaaats £1000 Safecracker Challenge £2000 Cash Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/lisa-whaaaaaats-ps1000-safecracker-challenge-ps2000-cash-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/484/conversions/01KVK2CPRGT1GNDEN2GAEYG4XH-large.jpg",
-      "ticketsSold": 17330,
+      "ticketsSold": 18306,
       "totalTickets": 200000,
       "percentSold": 9,
       "ticketPrice": 0.05,
@@ -87,7 +97,7 @@
       "title": "Have A Takeaway On Marvalous Free To Enter Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/have-a-takeaway-on-marvalous-free-to-enter-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/498/conversions/01KW1J7E8QXYNRK7JNTJXW4NS4-large.jpg",
-      "ticketsSold": 132,
+      "ticketsSold": 133,
       "totalTickets": 1000,
       "percentSold": 13,
       "ticketPrice": 0,
