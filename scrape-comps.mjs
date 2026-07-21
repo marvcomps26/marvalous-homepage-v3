@@ -157,9 +157,29 @@ title = title
   return match ? Number(match[1]) : null;
 });
 
+const nextLiveAt = await page.evaluate(() => {
+  const text = (document.body.innerText || "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const patterns = [
+    /Next Live Draw[\s\S]{0,120}?((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i,
+    /Live Draw[\s\S]{0,120}?((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i,
+    /((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i
+  ];
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) return match[1];
+  }
+
+  return null;
+});
+
 const output = {
   updatedAt: new Date().toISOString(),
   todaysWinnerCount,
+  nextLiveAt,
   count: competitions.length,
   competitions
 };
