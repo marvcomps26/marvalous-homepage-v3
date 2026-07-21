@@ -356,3 +356,16 @@ loadNextLiveDraw();
 
 /* Recheck the JSON every 5 minutes for a new draw date */
 setInterval(loadNextLiveDraw, 5 * 60 * 1000);
+
+async function turnOnNotifications() {
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+  OneSignalDeferred.push(async function(OneSignal) {
+    try {
+      await OneSignal.Slidedown.promptPush();
+    } catch (error) {
+      alert("Alerts are still loading. Please try again.");
+      console.error(error);
+    }
+  });
+}
