@@ -24,6 +24,9 @@ async function loadLiveCompetitions() {
 const totalInstantWins =
   document.getElementById("totalInstantWins");
 
+const heroInstantWins =
+  document.getElementById("heroInstantWins");
+    
 if (liveCompetitionCount) {
   liveCompetitionCount.textContent = competitions.length;
 }
@@ -40,6 +43,10 @@ if (totalInstantWins) {
       ? `${Math.floor(instantWinsTotal / 1000)}K+`
       : instantWinsTotal.toLocaleString();
 }
+  
+    if (heroInstantWins) {
+  heroInstantWins.textContent = instantWinsTotal.toLocaleString();
+    }
     if (!competitions.length) {
       competitionScroll.innerHTML =
         `<p class="competition-empty">No live competitions found.</p>`;
