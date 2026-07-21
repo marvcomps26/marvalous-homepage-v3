@@ -382,7 +382,7 @@ if ("serviceWorker" in navigator) {
 let deferredPrompt;
 
 const installBtn = document.getElementById("installBtn");
-
+const installCard = document.getElementById("installCard");
 window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
 
