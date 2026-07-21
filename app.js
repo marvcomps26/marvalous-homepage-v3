@@ -215,3 +215,22 @@ async function loadTodaysWinnerCount() {
 }
 
 loadTodaysWinnerCount();
+function openHowToPlay() {
+  document
+    .getElementById("howToPlayModal")
+    .classList.add("show");
+}
+
+function closeHowToPlay() {
+  document
+    .getElementById("howToPlayModal")
+    .classList.remove("show");
+}
+
+window.addEventListener("click", (event) => {
+  const modal = document.getElementById("howToPlayModal");
+
+  if (event.target === modal) {
+    closeHowToPlay();
+  }
+});
