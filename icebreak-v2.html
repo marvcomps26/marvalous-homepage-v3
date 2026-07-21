@@ -1197,7 +1197,11 @@ async function loadSettings(){
 
     const settingsRow = csvSplit(lines[0]);
 DAILY_CODE = (settingsRow[1] || "").trim().toUpperCase();
+const dailyCodeDisplay = document.getElementById("dailyCodeDisplay");
 
+if (dailyCodeDisplay) {
+  dailyCodeDisplay.textContent = DAILY_CODE;
+}
 PRIZES = [];
 
     for(let i=4; i<lines.length; i++){
