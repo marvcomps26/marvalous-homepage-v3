@@ -17,6 +17,29 @@ async function loadLiveCompetitions() {
     const data = await response.json();
     const competitions = data.competitions || [];
 
+
+    const liveCompetitionCount =
+  document.getElementById("liveCompetitionCount");
+
+const totalInstantWins =
+  document.getElementById("totalInstantWins");
+
+if (liveCompetitionCount) {
+  liveCompetitionCount.textContent = competitions.length;
+}
+
+const instantWinsTotal = competitions.reduce(
+  (total, competition) =>
+    total + Number(competition.instantWins || 0),
+  0
+);
+
+if (totalInstantWins) {
+  totalInstantWins.textContent =
+    instantWinsTotal >= 1000
+      ? `${Math.floor(instantWinsTotal / 1000)}K+`
+      : instantWinsTotal.toLocaleString();
+}
     if (!competitions.length) {
       competitionScroll.innerHTML =
         `<p class="competition-empty">No live competitions found.</p>`;
