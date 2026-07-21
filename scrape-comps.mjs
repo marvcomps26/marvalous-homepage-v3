@@ -157,24 +157,95 @@ title = title
   return match ? Number(match[1]) : null;
 });
 
-const nextLiveAt = await page.evaluate(() => {
-  const text = (document.body.innerText || "")
-    .replace(/\s+/g, " ")
-    .trim();
+const drawDates = await page.evaluate(() => {
+  const links = Array.from(
+    document.querySelectorAll('a[href*="/competition/"]')
+  );
 
-  const patterns = [
-    /Next Live Draw[\s\S]{0,120}?((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i,
-    /Live Draw[\s\S]{0,120}?((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i,
-    /((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+at\s+\d{1,2}(?::\d{2})?\s*(?:am|pm))/i
-  ];
+  return links
+    .map(link => {
+      let card = link;
 
-  for (const pattern of patterns) {
-    const match = text.match(pattern);
-    if (match) return match[1];
-  }
+      for (let level = 0; level < 8 && card; level++) {
+        const text = (card.innerText || "")
+          .replace(/\s+/g, " ")
+          .trim();
 
-  return null;
+        const match = text.match(
+          /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
+        );
+
+        if (match) {
+          return {
+            month: match[1],
+            day: Number(match[2]),
+            hour: Number(match[3]),
+            minute: Number(match[4]),
+            ampm: match[5].toLowerCase()
+          };
+        }
+
+        card = card.parentElement;
+      }
+
+      return null;
+    })
+    .filter(Boolean);
 });
+
+const monthNumbers = {
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  May: 4,
+  Jun: 5,
+  Jul: 6,
+  Aug: 7,
+  Sep: 8,
+  Oct: 9,
+  Nov: 10,
+  Dec: 11
+};
+
+const now = new Date();
+
+const upcomingDrawDates = drawDates
+  .map(draw => {
+    let hour = draw.hour;
+
+    if (draw.ampm === "pm" && hour !== 12) hour += 12;
+    if (draw.ampm === "am" && hour === 12) hour = 0;
+
+    let year = now.getFullYear();
+
+    let date = new Date(
+      year,
+      monthNumbers[draw.month],
+      draw.day,
+      hour,
+      draw.minute
+    );
+
+    if (date < now) {
+      date = new Date(
+        year + 1,
+        monthNumbers[draw.month],
+        draw.day,
+        hour,
+        draw.minute
+      );
+    }
+
+    return date;
+  })
+  .sort((a, b) => a - b);
+
+const nextLiveAt =
+  upcomingDrawDates.length
+    ? upcomingDrawDates[0].toISOString()
+    : null;
+
 
 const output = {
   updatedAt: new Date().toISOString(),
