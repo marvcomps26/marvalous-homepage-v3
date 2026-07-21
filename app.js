@@ -379,3 +379,41 @@ if ("serviceWorker" in navigator) {
       console.log("OneSignal worker error", error);
     });
 }
+let deferredPrompt;
+
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (installBtn) {
+    installBtn.style.display = "flex";
+  }
+});
+
+if (installBtn) {
+  installBtn.addEventListener("click", async () => {
+
+    // Android
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBtn.style.display = "none";
+      return;
+    }
+
+    // iPhone
+    alert(
+      "On iPhone:\n\nTap the Share button\nthen tap 'Add to Home Screen'."
+    );
+
+  });
+}
+
+window.addEventListener("appinstalled", () => {
+  if (installBtn) {
+    installBtn.style.display = "none";
+  }
+});
