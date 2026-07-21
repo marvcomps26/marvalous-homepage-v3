@@ -464,3 +464,59 @@ window.addEventListener("appinstalled", () => {
 if (isStandalone && installBtn) {
   installBtn.style.display = "none";
 }
+function openLeagueForm() {
+  const modal = document.getElementById("leagueModal");
+
+  if (modal) {
+    modal.classList.add("show");
+  }
+}
+
+function closeLeagueForm() {
+  const modal = document.getElementById("leagueModal");
+
+  if (modal) {
+    modal.classList.remove("show");
+  }
+}
+
+function submitLeagueSignup() {
+  const nameInput = document.getElementById("leagueName");
+  const emailInput = document.getElementById("leagueEmail");
+  const status = document.getElementById("leagueStatus");
+  const submitButton = document.getElementById("leagueSubmitBtn");
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+
+  if (!name || !email) {
+    alert("Please enter your name and email.");
+    return;
+  }
+
+  status.textContent = "Sending...";
+  submitButton.disabled = true;
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwqv0mOcwHVa2AaGzvwMLjw-nqV4LonCg3-MXpDcgcMbhmw2ORo4JmO8JiCxXZkBScC/exec",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify({
+        type: "leagueSignup",
+        name: name,
+        email: email
+      })
+    }
+  )
+    .then(() => {
+      status.textContent = "Request sent! We’ll add you shortly 💜";
+      submitButton.style.display = "none";
+    })
+    .catch(() => {
+      status.textContent = "Something went wrong. Please try again.";
+      submitButton.disabled = false;
+    });
+}
