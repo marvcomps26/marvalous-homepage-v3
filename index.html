@@ -786,7 +786,53 @@ OneSignalDeferred.push(async function(OneSignal) {
 
   </div>
 </div>
+<div id="leagueModal" class="how-to-play-modal">
+  <div class="how-to-play-card">
 
+    <button
+      type="button"
+      class="how-to-play-close"
+      onclick="closeLeagueForm()"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <span class="how-to-play-kicker">MONTHLY LEAGUE</span>
+    <h2>League Signup</h2>
+
+    <p>
+      Already have a Marvalous website account? Enter your details below
+      and we’ll add you to the league.
+      <br><br>
+      No account yet? Create one on our website first.
+    </p>
+
+    <input
+      id="leagueName"
+      type="text"
+      placeholder="Full name"
+    >
+
+    <input
+      id="leagueEmail"
+      type="email"
+      placeholder="Email address"
+    >
+
+    <button
+      id="leagueSubmitBtn"
+      type="button"
+      class="how-to-play-button"
+      onclick="submitLeagueSignup()"
+    >
+      Join League
+    </button>
+
+    <p id="leagueStatus"></p>
+
+  </div>
+</div>
   <script src="app.js?v=9"></script>
 
 </body>
