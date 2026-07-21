@@ -1,7 +1,8 @@
 {
   "name": "Marvalous Competitions",
   "short_name": "Marvalous",
-  "start_url": "/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#7b2cff",
