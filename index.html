@@ -19,7 +19,33 @@
     href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet"
   >
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
+<script>
+window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+OneSignalDeferred.push(async function(OneSignal) {
+  await OneSignal.init({
+    appId: "53bd206e-20f6-417e-8d73-ce10ee3b1b3a",
+    notifyButton: { enable: false },
+    promptOptions: {
+      slidedown: {
+        enabled: true,
+        autoPrompt: true
+      }
+    }
+  });
+
+  OneSignal.Notifications.addEventListener(
+    "permissionChange",
+    function(permission) {
+      if (permission) {
+        alert("You're in! Marvalous alerts are switched on 🔔");
+      }
+    }
+  );
+});
+</script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -55,16 +81,16 @@
       </a>
 
       <button
-        class="notification-button"
-        type="button"
-        aria-label="Turn on notifications"
-      >
+  class="notification-button"
+  type="button"
+  aria-label="Turn on notifications"
+  onclick="turnOnNotifications()"
+>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
           <path d="M10 21h4"></path>
         </svg>
 
-        <span class="notification-count">3</span>
       </button>
 
     </header>
