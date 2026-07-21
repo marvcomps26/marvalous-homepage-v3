@@ -369,3 +369,13 @@ async function turnOnNotifications() {
     }
   });
 }
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./onesignalsdkworker.js")
+    .then(() => {
+      console.log("OneSignal worker registered");
+    })
+    .catch(error => {
+      console.log("OneSignal worker error", error);
+    });
+}
