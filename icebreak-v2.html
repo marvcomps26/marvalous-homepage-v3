@@ -1464,7 +1464,11 @@ function submitClaim(){
     alert("Something went wrong sending your claim.");
   });
 }
-
+function revealDailyCode() {
+  document.getElementById("revealedCode").classList.add("show");
+  document.getElementById("revealCodeButton").textContent = "Code Revealed";
+  document.getElementById("revealCodeButton").disabled = true;
+}
 function closeModal(){
   modal.classList.remove("show");
 }
