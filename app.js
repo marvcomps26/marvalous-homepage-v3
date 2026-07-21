@@ -1,3 +1,15 @@
+/* SPLASH SCREEN */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const splash = document.getElementById("splash");
+
+  setTimeout(() => {
+    if (splash) {
+      splash.classList.add("hide");
+    }
+  }, 2400);
+});
+
 /* LIVE COMPETITIONS */
 
 async function loadLiveCompetitions() {
