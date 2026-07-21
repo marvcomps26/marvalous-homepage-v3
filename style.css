@@ -913,7 +913,8 @@ svg {
 
 .competition-tag {
   position: absolute;
-  top: 11px;
+  top: auto;
+  bottom: 11px;
   left: 11px;
   z-index: 3;
 
