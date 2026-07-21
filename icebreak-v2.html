@@ -965,6 +965,50 @@ button{
     flex-direction:column;
   }
 
+/* DAILY CODE REVEAL */
+
+.reveal-code-button{
+  width:100%;
+  min-height:56px;
+  margin:14px 0 12px;
+  color:#fff;
+  background:linear-gradient(135deg,#7b18ff,#b638ff);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 0 22px rgba(123,24,255,.36);
+}
+
+.revealed-code{
+  display:none;
+  margin:0 0 14px;
+  padding:18px 14px;
+  text-align:center;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,211,90,.12),transparent 55%),
+    rgba(255,255,255,.035);
+  border:1px solid rgba(255,211,90,.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 0 20px rgba(255,211,90,.12);
+}
+
+.revealed-code.show{
+  display:block;
+}
+
+.revealed-code span{
+  display:block;
+  color:#ffd76a;
+  font-size:32px;
+  line-height:1;
+  font-weight:1000;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  text-shadow:0 0 18px rgba(255,215,106,.48);
+}
+  
 </style>
 </head>
 
@@ -981,13 +1025,35 @@ button{
   </section>
 
   <section class="code-card glass">
-    <div class="code-title">Enter Today’s Code</div>
-    <div class="code-sub">Get today’s code from the Marvalous App homepage.</div>
-    <div class="row">
-      <input id="codeInput" placeholder="Enter daily code">
-      <button onclick="unlockGame()">Unlock</button>
-    </div>
-    <div id="status" class="status">Loading today’s settings...</div>
+
+  <div class="code-title">Today’s Daily Code</div>
+
+  <button
+    type="button"
+    id="revealCodeButton"
+    class="reveal-code-button"
+    onclick="revealDailyCode()"
+  >
+    Reveal Today’s Code
+  </button>
+
+  <div id="revealedCode" class="revealed-code">
+    <span id="dailyCodeDisplay">Loading...</span>
+  </div>
+
+  <div class="code-sub">
+    Enter the revealed code below to unlock today’s game.
+  </div>
+
+  <div class="row">
+    <input id="codeInput" placeholder="Enter daily code">
+    <button onclick="unlockGame()">Unlock</button>
+  </div>
+
+  <div id="status" class="status">
+    Loading today’s settings...
+  </div>
+
   </section>
 
   <section id="gameArea" class="stage glass locked">
