@@ -2412,3 +2412,13 @@ button.quick-access-card strong{
 button.quick-access-card span{
   color:rgba(255,255,255,.48);
 }
+.install-card {
+  width: 100%;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.install-card:active {
+  transform: scale(.985);
+}
