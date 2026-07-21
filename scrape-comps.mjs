@@ -226,7 +226,8 @@ const upcomingDrawDates = drawDates
       hour,
       draw.minute
     );
-
+   date.setHours(date.getHours() + 1);
+    
     if (date < now) {
       date = new Date(
         year + 1,
@@ -235,6 +236,7 @@ const upcomingDrawDates = drawDates
         hour,
         draw.minute
       );
+      date.setHours(date.getHours() + 1);
     }
 
     return date;
