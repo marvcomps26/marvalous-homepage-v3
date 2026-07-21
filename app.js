@@ -379,40 +379,88 @@ if ("serviceWorker" in navigator) {
       console.log("OneSignal worker error", error);
     });
 }
-let deferredPrompt;
+/* INSTALL MARVALOUS */
+
+let deferredPrompt = null;
 
 const installBtn = document.getElementById("installBtn");
-const installCard = document.getElementById("installCard");
-window.addEventListener("beforeinstallprompt", (e) => {
-  deferredPrompt = e;
 
-  if (installBtn) {
-    installBtn.style.display = "flex";
-  }
+const isIOS =
+  /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+const isStandalone =
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.navigator.standalone === true;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredPrompt = event;
 });
 
 if (installBtn) {
   installBtn.addEventListener("click", async () => {
 
-    // Android
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      installBtn.style.display = "none";
+    if (isStandalone) {
+      alert("Marvalous is already installed on this device.");
       return;
     }
 
-    // iPhone
-    alert(
-      "On iPhone:\n\nTap the Share button\nthen tap 'Add to Home Screen'."
-    );
+    if (isIOS) {
+      const iphoneModal =
+        document.getElementById("iphoneInstallModal");
 
+      if (iphoneModal) {
+        iphoneModal.classList.add("show");
+      }
+
+      return;
+    }
+
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+
+      const choice = await deferredPrompt.userChoice;
+
+      if (choice.outcome === "accepted") {
+        deferredPrompt = null;
+        installBtn.style.display = "none";
+      }
+
+      return;
+    }
+
+    alert(
+      "Open your browser menu and choose “Install app” or “Add to Home screen”."
+    );
   });
 }
 
+function closeIphoneInstall() {
+  const iphoneModal =
+    document.getElementById("iphoneInstallModal");
+
+  if (iphoneModal) {
+    iphoneModal.classList.remove("show");
+  }
+}
+
+window.addEventListener("click", (event) => {
+  const iphoneModal =
+    document.getElementById("iphoneInstallModal");
+
+  if (event.target === iphoneModal) {
+    closeIphoneInstall();
+  }
+});
+
 window.addEventListener("appinstalled", () => {
+  deferredPrompt = null;
+
   if (installBtn) {
     installBtn.style.display = "none";
   }
 });
+
+if (isStandalone && installBtn) {
+  installBtn.style.display = "none";
+}
