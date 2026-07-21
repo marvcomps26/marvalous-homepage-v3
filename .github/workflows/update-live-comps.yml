@@ -3,8 +3,8 @@ name: Update live competitions
 on:
   workflow_dispatch:
 
-  schedule:
-    - cron: "17,47 * * * *"
+schedule:
+  - cron: "*/5 * * * *"
 
 permissions:
   contents: write
