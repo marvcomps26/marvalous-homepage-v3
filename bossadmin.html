@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvalous League HQ</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+  background:radial-gradient(circle at top,#5b16b8,#08000d 55%,#000);
+}
+
+.app{
+  width:min(560px,100%);
+  margin:0 auto;
+  padding:18px;
+}
+
+.card{
+  background:rgba(20,0,35,.92);
+  border:1px solid rgba(190,130,255,.35);
+  border-radius:24px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 0 25px rgba(140,50,255,.25);
+}
+
+h1{
+  margin:0;
+  text-align:center;
+  font-size:28px;
+  text-transform:uppercase;
+}
+
+h2{
+  margin:0 0 12px;
+  font-size:20px;
+}
+
+.sub{
+  text-align:center;
+  color:#d9b8ff;
+  font-weight:bold;
+  margin:8px 0 18px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(190,130,255,.45);
+  background:#0b0014;
+  color:white;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+textarea{
+  min-height:80px;
+  resize:vertical;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:16px;
+  color:white;
+  font-weight:900;
+  font-size:16px;
+  margin:6px 0;
+  background:linear-gradient(135deg,#8d35ff,#4b148f);
+}
+
+button:active{
+  transform:scale(.98);
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.green{
+  background:linear-gradient(135deg,#0b8f3a,#06451d);
+}
+
+.gold{
+  background:linear-gradient(135deg,#c89600,#5a3d00);
+}
+
+.red{
+  background:linear-gradient(135deg,#a31935,#3d0611);
+}
+
+.grey{
+  background:#1d1427;
+}
+
+.orange{
+  background:linear-gradient(135deg,#c35400,#5a2200);
+}
+
+.pink{
+  background:linear-gradient(135deg,#d02282,#5d0733);
+}
+
+.big-total{
+  text-align:center;
+  font-size:42px;
+  font-weight:900;
+  color:#e4b1ff;
+  margin:8px 0 16px;
+}
+
+.small{
+  font-size:12px;
+  color:#cbb8e9;
+  text-align:center;
+}
+
+.hidden{
+  display:none!important;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+th{
+  color:#d9b8ff;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.num{
+  text-align:center;
+}
+
+.total{
+  color:#e4b1ff;
+  font-weight:900;
+}
+
+.log-entry{
+  padding:10px;
+  margin-bottom:8px;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.log-time{
+  font-size:11px;
+  color:#c9b7ea;
+}
+
+.log-points{
+  float:right;
+  font-weight:900;
+  color:#e4b1ff;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:11px;
+  background:#341152;
+  color:#dcb6ff;
+}
+
+.footer-space{
+  height:40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="card">
+<h1>Marvalous League HQ</h1>
+<div class="sub">Website Points Management</div>
+
+<select id="playerSelect"></select>
+
+<div class="big-total" id="currentTotal">
+0
+</div>
+
+<div class="small">
+Current Selected Player Total
+</div>
+</div>
+
+<div class="card">
+<h2>Website Spend</h2>
+
+<div class="row">
+<button onclick="addPoints(1,'£5+ Spend')">
+£5+ Spend (+1)
+</button>
+
+<button onclick="addPoints(3,'£10+ Spend')">
+£10+ Spend (+3)
+</button>
+</div>
+
+<div class="row">
+<button onclick="addPoints(7,'£20+ Spend')">
+£20+ Spend (+7)
+</button>
+
+<button onclick="addPoints(12,'£30+ Spend')">
+£30+ Spend (+12)
+</button>
+</div>
+
+<button onclick="addPoints(20,'£50+ Spend')">
+£50+ Spend (+20)
+</button>
+
+</div>
+  
+<div class="card">
+<h2>Wallet & Returning Purchases</h2>
+
+<div class="row">
+
+<button class="green"
+onclick="addPoints(1,'£10+ Wallet Top-Up / Returning Purchase')">
+£10+ Wallet / Returning (+1)
+</button>
+
+<button class="gold"
+onclick="addPoints(2,'£20+ Wallet Top-Up / Returning Purchase')">
+£20+ Wallet / Returning (+2)
+</button>
+
+</div>
+
+<button class="grey"
+onclick="undoLast()">
+Undo Last Action
+</button>
+
+</div>
+  
+<div class="card">
+
+<h2>League Leaderboard</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Pos</th>
+<th>Player</th>
+<th class="num">Points</th>
+</tr>
+</thead>
+
+<tbody id="leaderboard"></tbody>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Manage Players</h2>
+
+<input id="newPlayerName"
+placeholder="New Player Name">
+
+<button class="green"
+onclick="addPlayer()">
+Add New Player
+</button>
+
+<br><br>
+
+<select id="removePlayer"></select>
+
+<button class="red"
+onclick="removePlayer()">
+Delete Player
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Recent Activity</h2>
+
+<div id="activityLog">
+
+<div class="small">
+No activity yet
+</div>
+
+</div>
+
+<button class="gold" onclick="downloadWeeklyReport()">
+Download Weekly Report
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Weekly Controls</h2>
+
+<button class="red"
+onclick="resetWeek()">
+Reset Entire Week
+</button>
+
+</div>
+
+<div class="footer-space"></div>
+
+</div>
+
+<script>
+
+const API_URL = "https://script.google.com/macros/s/AKfycbyNm7tljoatEHdiWuYm1zT1CaXyfuI2hay4bcc3pX21eFFZZcvmMs8Mm2K48V_Ftucc/exec";
+
+let lastAction=null;
+
+let data = {
+players: [],
+activity: []
+};
+
+loadFromSheet();
+
+function save(){
+/* Google Sheet handles saving now */
+}
+
+
+async function loadFromSheet(){
+
+try{
+
+const response = await fetch(
+API_URL + "?action=getPlayers"
+);
+
+const result = await response.json();
+
+if(result.success){
+
+data.players = result.players
+.filter(x => x.active);
+
+render();
+
+}
+
+}catch(error){
+
+console.error(error);
+alert("Could not load players from Google Sheet");
+
+}
+
+}  
+function populatePlayers(){
+
+let select=document.getElementById("playerSelect");
+let remove=document.getElementById("removePlayer");
+
+select.innerHTML="";
+remove.innerHTML="";
+
+data.players
+.filter(x=>x.active)
+.forEach(player=>{
+
+let option=document.createElement("option");
+option.value=player.name;
+option.textContent=player.name;
+
+select.appendChild(option);
+
+let option2=document.createElement("option");
+option2.value=player.name;
+option2.textContent=player.name;
+
+remove.appendChild(option2);
+
+});
+
+updateCurrentPlayer();
+
+}
+
+function updateCurrentPlayer(){
+
+let selected=
+document.getElementById("playerSelect").value;
+
+let player=
+data.players.find(
+x=>x.name===selected
+);
+
+document.getElementById(
+"currentTotal"
+).textContent=
+player ? player.points : 0;
+
+}
+
+document.addEventListener(
+"change",
+function(e){
+
+if(e.target.id==="playerSelect"){
+updateCurrentPlayer();
+}
+
+}
+);
+
+
+async function addPoints(points,reason){
+
+let selected=
+document.getElementById("playerSelect").value;
+
+if(!selected){
+alert("Select a player first");
+return;
+}
+await fetch(
+API_URL +
+"?action=addPoints" +
+"&name=" + encodeURIComponent(selected) +
+"&points=" + points +
+"&reason=" + encodeURIComponent(reason)
+);
+
+let player=
+data.players.find(
+x=>x.name===selected
+);
+
+player.points+=points;
+
+let entry={
+name:selected,
+points:points,
+reason:reason,
+time:new Date().toLocaleString()
+};
+
+data.activity.unshift(entry);
+
+lastAction=entry;
+
+save();
+render();
+document.getElementById("playerSelect").value=selected;
+updateCurrentPlayer();
+
+}
+
+function undoLast(){
+
+if(!lastAction){
+alert("Nothing to undo");
+return;
+}
+
+let player=
+data.players.find(
+x=>x.name===lastAction.name
+);
+
+if(player){
+player.points-=lastAction.points;
+if(player.points<0){
+player.points=0;
+}
+}
+
+data.activity.shift();
+
+lastAction=null;
+
+save();
+render();
+
+}
+
+async function addPlayer(){
+
+let name=
+document.getElementById("newPlayerName").value.trim();
+
+if(!name){
+alert("Enter a player name");
+return;
+}
+await fetch(
+API_URL +
+"?action=addPlayer" +
+"&name=" + encodeURIComponent(name) +
+"&t=" + Date.now()
+);
+
+let exists=
+data.players.some(
+x=>x.name.toLowerCase()===name.toLowerCase()
+);
+
+if(exists){
+alert("This player already exists");
+return;
+}
+
+data.players.push({
+name:name,
+points:0,
+active:true
+});
+
+document.getElementById("newPlayerName").value="";
+
+save();
+render();
+
+}
+
+async function removePlayer(){
+
+let selected=
+document.getElementById("removePlayer").value;
+
+if(!confirm("Permanently delete "+selected+" from the league?")){
+return;
+}
+
+await fetch(
+API_URL +
+"?action=deletePlayer" +
+"&name=" + encodeURIComponent(selected) +
+"&t=" + Date.now()
+);
+
+await loadFromSheet();
+
+}
+
+async function resetWeek(){
+
+if(!confirm("Reset all points and activity log?")){
+return;
+}
+await fetch(
+API_URL + "?action=resetWeek&t=" + Date.now()
+);
+
+data.players.forEach(player=>{
+player.points=0;
+});
+
+data.activity=[];
+
+lastAction=null;
+
+save();
+render();
+
+}
+
+function renderLeaderboard(){
+
+let board=
+document.getElementById("leaderboard");
+
+board.innerHTML="";
+
+data.players
+.filter(x=>x.active)
+.sort((a,b)=>b.points-a.points)
+.forEach((player,index)=>{
+
+let pos=index+1;
+
+if(pos===1) pos="🥇";
+if(pos===2) pos="🥈";
+if(pos===3) pos="🥉";
+
+let row=document.createElement("tr");
+
+row.innerHTML=`
+<td class="num">${pos}</td>
+<td>${player.name}</td>
+<td class="num total">${player.points}</td>
+`;
+
+board.appendChild(row);
+
+});
+
+}
+
+function renderActivity(){
+
+let log=
+document.getElementById("activityLog");
+
+log.innerHTML="";
+
+if(data.activity.length===0){
+log.innerHTML='<div class="small">No activity yet</div>';
+return;
+}
+
+data.activity
+.slice(0,12)
+.forEach((entry,index)=>{
+
+let div=document.createElement("div");
+
+div.className="log-entry";
+
+div.innerHTML=`
+<div>
+<span class="badge">${entry.name}</span>
+<span class="log-points">+${entry.points}</span>
+</div>
+<div>${entry.reason}</div>
+<div class="log-time">${entry.time}</div>
+<div class="row">
+<button class="red" onclick="deleteActivity(${index})">Remove</button>
+</div>
+`;
+
+log.appendChild(div);
+
+});
+
+}
+async function deleteActivity(index){
+
+let entry=data.activity[index];
+
+if(!entry){
+return;
+}
+
+if(!confirm("Remove this entry?")){
+return;
+}
+await fetch(
+API_URL +
+"?action=removePoints" +
+"&name=" + encodeURIComponent(entry.name) +
+"&points=" + entry.points +
+"&t=" + Date.now()
+);
+
+let player=data.players.find(
+x=>x.name===entry.name
+);
+
+if(player){
+player.points-=entry.points;
+
+if(player.points<0){
+player.points=0;
+}
+}
+
+data.activity.splice(index,1);
+
+save();
+render();
+
+}
+
+function editActivity(index){
+
+let entry=data.activity[index];
+
+if(!entry){
+return;
+}
+
+let newPoints=prompt(
+"Edit points",
+entry.points
+);
+
+if(newPoints===null){
+return;
+}
+
+newPoints=parseInt(newPoints);
+
+if(isNaN(newPoints)){
+return;
+}
+
+let player=data.players.find(
+x=>x.name===entry.name
+);
+
+if(player){
+
+player.points-=entry.points;
+player.points+=newPoints;
+
+if(player.points<0){
+player.points=0;
+}
+
+}
+
+entry.points=newPoints;
+
+save();
+render();
+
+}
+
+async function downloadWeeklyReport(){
+
+try{
+
+const response = await fetch(
+API_URL + "?action=getActivityLog&t=" + Date.now()
+);
+
+const result = await response.json();
+
+if(!result.success){
+alert("Could not load activity log");
+return;
+}
+
+let rows = result.activity || [];
+
+let csv = "Date,Time,Player,Action,Points,Admin\n";
+
+rows.forEach(row=>{
+csv += `"${row.date}","${row.time}","${row.player}","${row.action}","${row.points}","${row.admin}"\n`;
+});
+
+let blob = new Blob([csv], { type:"text/csv" });
+let url = URL.createObjectURL(blob);
+
+let a = document.createElement("a");
+a.href = url;
+a.download = "marvalous-weekly-activity.csv";
+a.click();
+
+URL.revokeObjectURL(url);
+
+}catch(error){
+console.error(error);
+alert("Could not download report");
+}
+
+}
+  
+function render(){
+
+populatePlayers();
+renderLeaderboard();
+renderActivity();
+updateCurrentPlayer();
+
+}
+
+render();
+
+</script>
+</body>
+</html>
