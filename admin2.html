@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvalous Admin 2</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+  background:radial-gradient(circle at top,#5b16b8,#08000d 55%,#000);
+  min-height:100vh;
+}
+.app{
+  width:min(520px,100%);
+  margin:0 auto;
+  padding:18px;
+}
+.card{
+  background:rgba(20,0,35,.92);
+  border:1px solid rgba(190,130,255,.35);
+  border-radius:24px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 0 25px rgba(140,50,255,.25);
+}
+h1{
+  margin:0;
+  font-size:28px;
+  text-align:center;
+  text-transform:uppercase;
+}
+h2{
+  margin:0 0 12px;
+  font-size:20px;
+}
+.sub{
+  text-align:center;
+  color:#d9b8ff;
+  font-weight:bold;
+  margin:8px 0 18px;
+}
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(190,130,255,.45);
+  background:#0b0014;
+  color:white;
+  font-size:16px;
+  margin-bottom:10px;
+}
+button{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:16px;
+  color:white;
+  font-weight:900;
+  font-size:16px;
+  margin:6px 0;
+  background:linear-gradient(135deg,#8d35ff,#4b148f);
+}
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.green{background:linear-gradient(135deg,#0b8f3a,#06451d)}
+.pink{background:linear-gradient(135deg,#d02282,#5d0733)}
+.red{background:linear-gradient(135deg,#a31935,#3d0611)}
+.grey{background:#1d1427}
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:16px;
+}
+th,td{
+  padding:8px 6px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  text-align:left;
+}
+th{
+  color:#d9b8ff;
+  font-size:12px;
+  text-transform:uppercase;
+}
+td{
+  font-size:14px;
+}
+.num{text-align:center}
+.total{
+  font-size:16px;
+  font-weight:900;
+  color:#e4b1ff;
+}
+.hidden{display:none}
+.small{
+  font-size:12px;
+  color:#cbb8e9;
+  text-align:center;
+}
+
+.log-entry{
+  padding:10px;
+  margin-bottom:8px;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.log-time{
+  font-size:11px;
+  color:#c9b7ea;
+}
+
+.log-points{
+  float:right;
+  font-weight:900;
+  color:#e4b1ff;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:11px;
+  background:#341152;
+  color:#dcb6ff;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <div id="loginBox" class="card">
+    <h1>Admin 2</h1>
+    <div class="sub">Private League Tracker</div>
+
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Open Tracker</button>
+
+    <p class="small">Password: marvleague2026</p>
+  </div>
+
+  <div id="tracker" class="hidden">
+    <h1>Marvalous League</h1>
+    <div class="sub">Facebook + Scratch Tracker</div>
+
+    <div class="card">
+      <h2>Add Points</h2>
+
+      <input id="search" placeholder="Search player..." oninput="fillPlayers()">
+
+      <select id="player"></select>
+
+   <div class="row">
+
+  <div>
+    <select id="fbPoints">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <button onclick="applyFB()">Add Facebook Points</button>
+  </div>
+
+  <div>
+    <select id="scratchPoints">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <button onclick="applyScratch()">Add League Points</button>
+  </div>
+
+   </div>
+      <button class="grey" onclick="undoLast()">Undo Last</button>
+    </div>
+    <div class="card">
+      <h2>League Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pos</th>
+            <th>Name</th>
+            <th class="num">FB</th>
+            <th class="num">SCR</th>
+            <th class="num">PTS</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+      </table>
+
+      <br>
+
+      <button class="green" onclick="openAddPlayer()">Add New Player</button>
+      <button onclick="copyWeeklyReport()">Copy Weekly Report</button>
+      <button class="red" onclick="resetWeek()">Reset Week</button>
+
+    </div>
+  </div>
+</div>
+<div class="card">
+  <h2>Recent Activity</h2>
+  <div id="activityLog">
+    <div class="small">No activity yet</div>
+  </div>
+</div>
+
+  
+<div id="playerModal" class="card hidden" style="position:fixed;left:10px;right:10px;top:50%;transform:translateY(-50%);z-index:999">
+
+  <h2>Add Player</h2>
+
+  <input id="newPlayerName" placeholder="Player Name">
+
+  <button class="green" onclick="savePlayer()">Save Player</button>
+
+  <button onclick="closeAddPlayer()">Cancel</button>
+
+</div>
+
+<script>
+
+const PASSWORD="marvleague2026";
+const STORAGE_KEY="marvalous_admin2_local";
+const API_URL="https://script.google.com/macros/s/AKfycbyNm7tljoatEHdiWuYm1zT1CaXyfuI2hay4bcc3pX21eFFZZcvmMs8Mm2K48V_Ftucc/exec";
+
+let lastAction=null;
+let data={players:[]};
+
+function getLocal(){
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+}
+
+function saveLocal(local){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(local));
+}
+
+async function loadFromSheet(){
+  try{
+    const response=await fetch(API_URL+"?action=getPlayers&t="+Date.now());
+    const result=await response.json();
+
+    if(result.success){
+      const local=getLocal();
+
+      data.players=result.players
+      .filter(x=>x.active)
+      .map(player=>({
+        name:player.name,
+        points:Number(player.points || 0),
+        fb:local[player.name]?.fb || 0,
+        scratch:local[player.name]?.scratch || 0
+      }));
+
+      fillPlayers();
+      renderTable();
+      renderActivity();
+    }
+  }catch(error){
+    console.error(error);
+    alert("Could not load players from Google Sheet");
+  }
+}
+
+function login(){
+  if(document.getElementById("password").value!==PASSWORD){
+    alert("Wrong Password");
+    return;
+  }
+
+  document.getElementById("loginBox").classList.add("hidden");
+  document.getElementById("tracker").classList.remove("hidden");
+
+  loadFromSheet();
+}
+
+function fillPlayers(){
+  let search=document.getElementById("search").value.toLowerCase();
+  let select=document.getElementById("player");
+
+  select.innerHTML="";
+
+  data.players
+  .filter(x=>x.name.toLowerCase().includes(search))
+  .forEach(player=>{
+    let option=document.createElement("option");
+    option.value=player.name;
+    option.textContent=player.name;
+    select.appendChild(option);
+  });
+}
+
+async function addPoints(type,points,customReason){
+  let selected=document.getElementById("player").value;
+
+  if(!selected){
+    alert("Choose a player first");
+    return;
+  }
+
+  let reason = customReason || (type==="fb" ? "Facebook +1" : "Scratch +" + points);
+
+  try{
+    await fetch(
+      API_URL+
+      "?action=addPoints"+
+      "&name="+encodeURIComponent(selected)+
+      "&points="+points+
+      "&reason="+encodeURIComponent(reason)+
+"&admin="+encodeURIComponent("Admin 2")+
+"&t="+Date.now()
+    );
+
+    let local=getLocal();
+
+    if(!local[selected]) local[selected]={fb:0,scratch:0};
+    local[selected][type]+=points;
+
+    if(!local.activity) local.activity=[];
+
+    let entry={
+      name:selected,
+      type:type,
+      points:points,
+      reason:reason,
+      time:new Date().toLocaleString()
+    };
+
+    local.activity.unshift(entry);
+    saveLocal(local);
+
+    let player=data.players.find(x=>x.name===selected);
+    if(player){
+      player[type]+=points;
+      player.points+=points;
+    }
+
+    lastAction=entry;
+
+    renderTable();
+    renderActivity();
+    await loadFromSheet();
+
+  }catch(error){
+    console.error(error);
+    alert("Could not update Google Sheet");
+  }
+}
+function applyFB(){
+  const points = Number(document.getElementById("fbPoints").value);
+  addPoints("fb", points, "Facebook +" + points);
+}
+
+function applyScratch(){
+  const points = Number(document.getElementById("scratchPoints").value);
+  addPoints("scratch", points, "League +" + points);
+}
+      
+async function subtractPoints(type,points){
+  let selected=document.getElementById("player").value;
+
+  if(!selected){
+    alert("Choose a player first");
+    return;
+  }
+
+  try{
+    await fetch(
+      API_URL+
+      "?action=removePoints"+
+      "&name="+encodeURIComponent(selected)+
+      "&points="+points+
+      "&t="+Date.now()
+    );
+
+    let local=getLocal();
+
+    if(local[selected]){
+      local[selected][type]-=points;
+      if(local[selected][type]<0){
+        local[selected][type]=0;
+      }
+      saveLocal(local);
+    }
+
+    await loadFromSheet();
+
+  }catch(error){
+    console.error(error);
+    alert("Could not remove points from Google Sheet");
+  }
+}
+  
+async function undoLast(){
+  if(!lastAction){
+    alert("Nothing to undo");
+    return;
+  }
+
+  await removeEntry(lastAction);
+
+  let local=getLocal();
+  if(local.activity){
+    local.activity=local.activity.filter(x=>x.time!==lastAction.time);
+    saveLocal(local);
+  }
+
+  lastAction=null;
+
+  await loadFromSheet();
+}
+
+function renderTable(){
+  let body=document.getElementById("tableBody");
+  body.innerHTML="";
+
+  data.players
+  .sort((a,b)=>b.points-a.points)
+  .forEach((player,index)=>{
+    let row=document.createElement("tr");
+
+    let pos=index+1;
+    if(pos===1) pos="🥇";
+    if(pos===2) pos="🥈";
+    if(pos===3) pos="🥉";
+
+    row.innerHTML=`
+      <td class="num">${pos}</td>
+      <td>${player.name}</td>
+      <td class="num">${player.fb}</td>
+      <td class="num">${player.scratch}</td>
+      <td class="num total">${player.points}</td>
+    `;
+
+    body.appendChild(row);
+  });
+}
+
+function renderActivity(){
+  let log=document.getElementById("activityLog");
+  if(!log) return;
+
+  let local=getLocal();
+  let activity=local.activity || [];
+
+  log.innerHTML="";
+
+  if(activity.length===0){
+    log.innerHTML='<div class="small">No activity yet</div>';
+    return;
+  }
+
+  activity.slice(0,20).forEach((entry,index)=>{
+    let div=document.createElement("div");
+    div.className="log-entry";
+
+    div.innerHTML=`
+      <div>
+        <span class="badge">${entry.name}</span>
+        <span class="log-points">+${entry.points}</span>
+      </div>
+      <div>${entry.reason}</div>
+      <div class="log-time">${entry.time}</div>
+      <button class="red" onclick="removeActivity(${index})">Remove</button>
+    `;
+
+    log.appendChild(div);
+  });
+}
+
+async function removeEntry(entry){
+  await fetch(
+    API_URL+
+    "?action=removePoints"+
+    "&name="+encodeURIComponent(entry.name)+
+    "&points="+entry.points+
+    "&t="+Date.now()
+  );
+
+  let local=getLocal();
+
+  if(local[entry.name]){
+    local[entry.name][entry.type]-=entry.points;
+    if(local[entry.name][entry.type]<0){
+      local[entry.name][entry.type]=0;
+    }
+  }
+
+  saveLocal(local);
+}
+
+async function removeActivity(index){
+  let local=getLocal();
+  let activity=local.activity || [];
+  let entry=activity[index];
+
+  if(!entry) return;
+
+  if(!confirm("Remove this points entry?")) return;
+
+  try{
+    await removeEntry(entry);
+
+    activity.splice(index,1);
+    local.activity=activity;
+    saveLocal(local);
+
+    await loadFromSheet();
+
+  }catch(error){
+    console.error(error);
+    alert("Could not remove points from Google Sheet");
+  }
+}
+
+function openAddPlayer(){
+  document.getElementById("playerModal").classList.remove("hidden");
+}
+
+function closeAddPlayer(){
+  document.getElementById("playerModal").classList.add("hidden");
+}
+
+async function savePlayer(){
+  let name=document.getElementById("newPlayerName").value.trim();
+
+  if(!name){
+    alert("Add a player name");
+    return;
+  }
+
+  try{
+    await fetch(
+      API_URL+
+      "?action=addPlayer"+
+      "&name="+encodeURIComponent(name)+
+      "&t="+Date.now()
+    );
+
+    document.getElementById("newPlayerName").value="";
+    closeAddPlayer();
+    await loadFromSheet();
+
+  }catch(error){
+    console.error(error);
+    alert("Could not add player to Google Sheet");
+  }
+}
+
+async function resetWeek(){
+  if(!confirm("This will reset the Google Sheet points to zero. Are you sure?")){
+    return;
+  }
+
+  try{
+    await fetch(API_URL+"?action=resetWeek&t="+Date.now());
+    localStorage.removeItem(STORAGE_KEY);
+    lastAction=null;
+    await loadFromSheet();
+  }catch(error){
+    console.error(error);
+    alert("Could not reset Google Sheet");
+  }
+}
+
+function copyWeeklyReport(){
+  let report="WEEKLY LEAGUE POINTS\n\n";
+
+  data.players
+  .sort((a,b)=>b.points-a.points)
+  .forEach(player=>{
+    report += player.name + "\n";
+    report += "Facebook Points: " + player.fb + "\n";
+    report += "App/Scratch Points: " + player.scratch + "\n";
+    report += "Total: " + player.points + "\n\n";
+  });
+
+  navigator.clipboard.writeText(report).then(()=>{
+    alert("Weekly report copied");
+  });
+}
+
+document.getElementById("loginBox").classList.add("hidden");
+document.getElementById("tracker").classList.remove("hidden");
+
+loadFromSheet();
+
+</script>  
+
+  
+        
+</body>
+</html>
