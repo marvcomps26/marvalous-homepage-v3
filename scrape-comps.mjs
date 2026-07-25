@@ -171,19 +171,36 @@ const drawDates = await page.evaluate(() => {
           .replace(/\s+/g, " ")
           .trim();
 
-        const match = text.match(
-          /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
-        );
+       const tomorrowMatch = text.match(
+  /\bTomorrow\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
+);
 
-        if (match) {
-          return {
-            month: match[1],
-            day: Number(match[2]),
-            hour: Number(match[3]),
-            minute: Number(match[4]),
-            ampm: match[5].toLowerCase()
-          };
-        }
+if (tomorrowMatch) {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  return {
+    month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][tomorrow.getMonth()],
+    day: tomorrow.getDate(),
+    hour: Number(tomorrowMatch[1]),
+    minute: Number(tomorrowMatch[2]),
+    ampm: tomorrowMatch[3].toLowerCase()
+  };
+}
+
+const match = text.match(
+  /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
+);
+
+if (match) {
+  return {
+    month: match[1],
+    day: Number(match[2]),
+    hour: Number(match[3]),
+    minute: Number(match[4]),
+    ampm: match[5].toLowerCase()
+  };
+} 
 
         card = card.parentElement;
       }
