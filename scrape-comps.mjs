@@ -1,4 +1,4 @@
-Number { chromium } from "playwright";
+import { chromium } from "playwright";
 import fs from "node:fs/promises";
 
 const WEBSITE_URL = "https://marvalouscompetitions.co.uk/";
