@@ -171,47 +171,53 @@ const drawDates = await page.evaluate(() => {
           .replace(/\s+/g, " ")
           .trim();
 
- const relativeDateMatch = text.match(
-  /\b(Today|Tomorrow)\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
-);
+        const relativeDateMatch = text.match(
+          /\b(Today|Tomorrow)\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
+        );
 
-if (relativeDateMatch) {
-  const relativeDate = new Date();
+        if (relativeDateMatch) {
+          const relativeDate = new Date();
 
-  if (relativeDateMatch[1].toLowerCase() === "tomorrow") {
-    relativeDate.setDate(relativeDate.getDate() + 1);
-  }
+          if (
+            relativeDateMatch[1].toLowerCase() === "tomorrow"
+          ) {
+            relativeDate.setDate(relativeDate.getDate() + 1);
+          }
 
-  return {
-    month: [
-      "Jan","Feb","Mar","Apr","May","Jun",
-      "Jul","Aug","Sep","Oct","Nov","Dec"
-    ][relativeDate.getMonth()],
-    day: relativeDate.getDate(),
-    hour: 7,
-    minute: 0,
-    ampm: "pm"
-  };
-}
+          return {
+            month: [
+              "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            ][relativeDate.getMonth()],
+            day: relativeDate.getDate(),
+            hour: 7,
+            minute: 0,
+            ampm: "pm"
+          };
+        }
 
-const match = text.match(
-  /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
-);
+        const match = text.match(
+          /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
+        );
 
-if (match) {
-  return {
-    month: match[1],
-    day: Number(match[2]),
-    hour: Number(match[3]),
-    minute: Number(match[4]),
-    ampm: match[5].toLowerCase()
-  };
-}      
+        if (match) {
+          return {
+            month: match[1],
+            day: Number(match[2]),
+            hour: 7,
+            minute: 0,
+            ampm: "pm"
+          };
+        }
 
-          return null;
+        card = card.parentElement;
+      }
+
+      return null;
     })
     .filter(Boolean);
 });
+
 
 const monthNumbers = {
   Jan: 0,
