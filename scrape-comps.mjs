@@ -176,15 +176,26 @@ const drawDates = await page.evaluate(() => {
 );
 
 if (tomorrowMatch) {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
+  const relativeDateMatch = text.match(
+  /\b(Today|Tomorrow)\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
+);
+
+if (relativeDateMatch) {
+  const relativeDate = new Date();
+
+  if (relativeDateMatch[1].toLowerCase() === "tomorrow") {
+    relativeDate.setDate(relativeDate.getDate() + 1);
+  }
 
   return {
-    month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][tomorrow.getMonth()],
-    day: tomorrow.getDate(),
-    hour: Number(tomorrowMatch[1]),
-    minute: Number(tomorrowMatch[2]),
-    ampm: tomorrowMatch[3].toLowerCase()
+    month: [
+      "Jan","Feb","Mar","Apr","May","Jun",
+      "Jul","Aug","Sep","Oct","Nov","Dec"
+    ][relativeDate.getMonth()],
+    day: relativeDate.getDate(),
+    hour: 7,
+    minute: 0,
+    ampm: "pm"
   };
 }
 
