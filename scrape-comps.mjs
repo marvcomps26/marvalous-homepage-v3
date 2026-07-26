@@ -171,12 +171,7 @@ const drawDates = await page.evaluate(() => {
           .replace(/\s+/g, " ")
           .trim();
 
-       const tomorrowMatch = text.match(
-  /\bTomorrow\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
-);
-
-if (tomorrowMatch) {
-  const relativeDateMatch = text.match(
+ const relativeDateMatch = text.match(
   /\b(Today|Tomorrow)\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
 );
 
@@ -211,10 +206,7 @@ if (match) {
     minute: Number(match[4]),
     ampm: match[5].toLowerCase()
   };
-} 
-
-        card = card.parentElement;
-      } 
+}      
 
       return null;
     .filter(Boolean);
