@@ -214,10 +214,9 @@ if (match) {
 } 
 
         card = card.parentElement;
-      }
+      } 
 
       return null;
-    })
     .filter(Boolean);
 });
 
