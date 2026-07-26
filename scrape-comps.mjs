@@ -1,4 +1,4 @@
-import { chromium } from "playwright";
+Number { chromium } from "playwright";
 import fs from "node:fs/promises";
 
 const WEBSITE_URL = "https://marvalouscompetitions.co.uk/";
@@ -190,7 +190,7 @@ const drawDates = await page.evaluate(() => {
               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
             ][relativeDate.getMonth()],
             day: relativeDate.getDate(),
-            hour: 7,
+            hour: 6,
             minute: 0,
             ampm: "pm"
           };
@@ -204,7 +204,7 @@ const drawDates = await page.evaluate(() => {
           return {
             month: match[1],
             day: Number(match[2]),
-            hour: 7,
+            hour: 6,
             minute: 0,
             ampm: "pm"
           };
