@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-26T10:58:25.216Z",
-  "todaysWinnerCount": 43,
+  "updatedAt": "2026-07-26T12:03:49.083Z",
+  "todaysWinnerCount": 44,
   "nextLiveAt": "2026-07-26T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -8,9 +8,9 @@
       "title": "Joannes Salon Style Spin To Win",
       "url": "https://marvalouscompetitions.co.uk/competition/joannes-salon-style-spin-to-win",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/491/conversions/01KVW40N23FMEJPAJA87DKY9A2-large.jpeg",
-      "ticketsSold": 26179,
+      "ticketsSold": 26279,
       "totalTickets": 150000,
-      "percentSold": 17,
+      "percentSold": 18,
       "ticketPrice": 0.1,
       "instantWins": 148
     },
@@ -28,7 +28,7 @@
       "title": "Jodie Oates The Yorkshire Lass Lucky Gems",
       "url": "https://marvalouscompetitions.co.uk/competition/jodie-oates-the-yorkshire-lass-lucky-gems",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/564/conversions/01KY257FFPFH9WHKPZS9CEY7PM-large.jpg",
-      "ticketsSold": 6576,
+      "ticketsSold": 6580,
       "totalTickets": 300000,
       "percentSold": 2,
       "ticketPrice": 0.3,
@@ -98,7 +98,7 @@
       "title": "Arctic Marvs Site Credit Bonanza",
       "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-site-credit-bonanza",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/582/conversions/01KY2HF0Y2MHZDQCYRC6KVHGC6-large.jpg",
-      "ticketsSold": 12542,
+      "ticketsSold": 12552,
       "totalTickets": 550000,
       "percentSold": 2,
       "ticketPrice": 0.01,
