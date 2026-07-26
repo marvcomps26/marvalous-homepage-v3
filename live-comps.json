@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-26T19:55:05.946Z",
-  "todaysWinnerCount": 470,
+  "updatedAt": "2026-07-26T20:47:22.652Z",
+  "todaysWinnerCount": 478,
   "nextLiveAt": "2026-08-05T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -35,6 +35,16 @@
       "instantWins": 10
     },
     {
+      "title": "Scouse House With Joanne Goffey",
+      "url": "https://marvalouscompetitions.co.uk/competition/scouse-house-with-joanne-goffey",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/589/conversions/01KYC9MGTBJQAXNRNA26ZRYR8N-large.jpg",
+      "ticketsSold": 1569,
+      "totalTickets": 170000,
+      "percentSold": 1,
+      "ticketPrice": 0.07,
+      "instantWins": 10073
+    },
+    {
       "title": "Nadir Silver Bar 100g 5x 10g Silver Instant Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/nadir-silver-bar-100g-5x-10g-silver-instant-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/552/conversions/01KXG1S9GR738N7N80Z6SPNT0P-large.jpg",
@@ -55,40 +65,30 @@
       "instantWins": 47273
     },
     {
-      "title": "Arctic Marvs Coffee Break",
-      "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-coffee-break",
-      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/585/conversions/01KY9P5AC8A9J1QA1MK5KFX67T-large.jpg",
-      "ticketsSold": 8,
-      "totalTickets": 3000,
-      "percentSold": 0,
-      "ticketPrice": 0,
-      "instantWins": null
-    },
-    {
-      "title": "Scouse House With Joanne Goffey",
-      "url": "https://marvalouscompetitions.co.uk/competition/scouse-house-with-joanne-goffey",
-      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/589/conversions/01KYC9MGTBJQAXNRNA26ZRYR8N-large.jpg",
-      "ticketsSold": 1519,
-      "totalTickets": 170000,
-      "percentSold": 1,
-      "ticketPrice": 0.07,
-      "instantWins": 10073
-    },
-    {
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 2098,
+      "ticketsSold": 2103,
       "totalTickets": 30000,
       "percentSold": 7,
       "ticketPrice": 1,
       "instantWins": 30000
     },
     {
+      "title": "Arctic Marvs Coffee Break",
+      "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-coffee-break",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/585/conversions/01KY9P5AC8A9J1QA1MK5KFX67T-large.jpg",
+      "ticketsSold": 9,
+      "totalTickets": 3000,
+      "percentSold": 0,
+      "ticketPrice": 0,
+      "instantWins": null
+    },
+    {
       "title": "Marvs Household Essential Air Fryer",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-household-essential-air-fryer",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/588/conversions/01KYA9YCC3FZGD30TRWMN14RXH-large.jpg",
-      "ticketsSold": 475,
+      "ticketsSold": 490,
       "totalTickets": 75000,
       "percentSold": 1,
       "ticketPrice": 0.01,
