@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T01:18:37.811Z",
-  "todaysWinnerCount": 51,
+  "updatedAt": "2026-07-27T04:56:36.440Z",
+  "todaysWinnerCount": 106,
   "nextLiveAt": "2026-07-27T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Stee Lees Cha Cha Ching",
       "url": "https://marvalouscompetitions.co.uk/competition/stee-lees-cha-cha-ching",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/502/conversions/01KWH6H60XBJ9WXCNDGVWDK1TQ-large.jpg",
-      "ticketsSold": 18206,
+      "ticketsSold": 18257,
       "totalTickets": 150000,
       "percentSold": 12,
       "ticketPrice": 0.05,
@@ -18,7 +18,7 @@
       "title": "Apple Or Android The Choice Is Yours",
       "url": "https://marvalouscompetitions.co.uk/competition/apple-or-android-the-choice-is-yours",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/509/conversions/01KWP5ZFD1C3TEH9CTB6ERKEWY-large.jpg",
-      "ticketsSold": 3373,
+      "ticketsSold": 3565,
       "totalTickets": 50000,
       "percentSold": 7,
       "ticketPrice": 0.1,
@@ -68,9 +68,9 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 2215,
+      "ticketsSold": 2270,
       "totalTickets": 30000,
-      "percentSold": 7,
+      "percentSold": 8,
       "ticketPrice": 1,
       "instantWins": 30000
     },
