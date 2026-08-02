@@ -83,13 +83,11 @@ if (totalInstantWins) {
             : "View";
 
       const tag =
-        displayedPercent >= 80
-          ? "ALMOST GONE"
-          : displayedPercent >= 40
-            ? "POPULAR"
-            : index === 0
-              ? "JUST ADDED"
-              : "LIVE NOW";
+  displayedPercent >= 80
+    ? "ALMOST GONE"
+    : displayedPercent >= 40
+      ? "POPULAR"
+      : "LIVE NOW";
 
       return `
         <a
