@@ -166,14 +166,14 @@ const drawDates = await page.evaluate(() => {
     .map(link => {
       let card = link;
 
-      for (let level = 0; level < 8 && card; level++) {
+      for (let level = 0; level < 3 && card; level++) {
         const text = (card.innerText || "")
           .replace(/\s+/g, " ")
           .trim();
 
         const relativeDateMatch = text.match(
-          /\b(Today|Tomorrow)\b[\s\S]*?(\d{1,2}):(\d{2})(am|pm)/i
-        );
+  /\b(Today|Tomorrow)\s+(\d{1,2}):(\d{2})(am|pm)\b/i
+);
 
         if (relativeDateMatch) {
           const relativeDate = new Date();
