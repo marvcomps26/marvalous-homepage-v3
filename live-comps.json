@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-03T23:31:46.977Z",
-  "todaysWinnerCount": 0,
-  "nextLiveAt": "2026-08-04T18:00:00.000Z",
+  "updatedAt": "2026-08-04T01:02:59.024Z",
+  "todaysWinnerCount": 2,
+  "nextLiveAt": "2026-08-05T18:00:00.000Z",
   "count": 11,
   "competitions": [
     {
@@ -68,7 +68,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 3121,
+      "ticketsSold": 3123,
       "totalTickets": 30000,
       "percentSold": 10,
       "ticketPrice": 1,
