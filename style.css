@@ -813,20 +813,7 @@ svg {
   line-height: 1;
 }
 
-.league-feature {
-  border-color: rgba(255, 211, 90, 0.38);
-}
 
-.league-feature .feature-link {
-  color: #1a001e;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--gold),
-      var(--gold-dark)
-    );
-}
 
 .winners-feature {
   border-color: rgba(53, 184, 255, 0.36);
@@ -2432,16 +2419,4 @@ button.quick-access-card span{
 .install-card .install-copy > span {
   color: var(--gold);
 }
-.league-button-stack{
-  margin-top:auto;
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-}
 
-.league-button-stack .feature-link{
-  margin-top:0;
-}
-
-.league-view-button{
-  color:#1a001
