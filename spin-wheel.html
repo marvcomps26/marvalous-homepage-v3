@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050207"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <title>Marv’s Spin the Wheel</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./style.css?v=10"
+  >
+
+</head>
+
+
+<body>
+
+  <div
+    class="page-ambient"
+    aria-hidden="true"
+  ></div>
+
+
+  <main class="game-shell">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="game-header">
+
+
+      <div class="brand-medallion">
+
+        <div class="brand-medallion-inner">
+
+          <img
+            src="./marvalous-logo.png"
+            alt="Marvalous"
+            class="brand-logo-image"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="header-copy">
+
+        <span class="header-kicker">
+          MARVALOUS DAILY GAME
+        </span>
+
+        <h1>
+          Spin the Wheel
+        </h1>
+
+      </div>
+
+
+      <div class="header-daily-badge">
+
+        <span aria-hidden="true">
+          ✦
+        </span>
+
+        <span>
+          ONE SPIN PER DAY
+        </span>
+
+        <span aria-hidden="true">
+          ✦
+        </span>
+
+      </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN GAME PANEL
+    ====================================================== -->
+
+    <section class="hero-panel">
+
+
+      <div
+        class="hero-top-shine"
+        aria-hidden="true"
+      ></div>
+
+
+      <div
+        class="hero-sparkle hero-sparkle-left"
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+
+
+      <div
+        class="hero-sparkle hero-sparkle-right"
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+
+
+
+      <div class="hero-copy">
+
+        <h2>
+
+          <span class="hero-line-white">
+            SPIN FOR A
+          </span>
+
+          <span class="hero-line-gold">
+            MARVALOUS
+          </span>
+
+          <span class="hero-line-gold">
+            REWARD!
+          </span>
+
+        </h2>
+
+
+        <p>
+          Tap the button and see where the wheel lands.
+        </p>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           WHEEL
+      ==================================================== -->
+
+      <div class="wheel-area">
+
+
+        <div
+          class="wheel-pointer"
+          aria-hidden="true"
+        >
+          <div class="pointer-gem"></div>
+        </div>
+
+
+
+        <div class="wheel-frame">
+
+
+          <!-- LIGHTS -->
+
+          <div
+            class="wheel-light-ring"
+            aria-hidden="true"
+          >
+
+            <span class="wheel-light light-1"></span>
+            <span class="wheel-light light-2"></span>
+            <span class="wheel-light light-3"></span>
+            <span class="wheel-light light-4"></span>
+            <span class="wheel-light light-5"></span>
+            <span class="wheel-light light-6"></span>
+            <span class="wheel-light light-7"></span>
+            <span class="wheel-light light-8"></span>
+            <span class="wheel-light light-9"></span>
+            <span class="wheel-light light-10"></span>
+            <span class="wheel-light light-11"></span>
+            <span class="wheel-light light-12"></span>
+
+          </div>
+
+
+
+          <!-- ROTATING WHEEL -->
+
+          <div
+            id="wheel"
+            class="wheel"
+          >
+
+            <div class="wheel-label label-1">
+              20% OFF
+            </div>
+
+            <div class="wheel-label label-2">
+              50% OFF
+            </div>
+
+            <div class="wheel-label label-3">
+              75% OFF
+            </div>
+
+            <div class="wheel-label label-4">
+              5% OFF
+            </div>
+
+            <div class="wheel-label label-5">
+              10% OFF
+            </div>
+
+            <div class="wheel-label label-6">
+              15% OFF
+            </div>
+
+            <div class="wheel-label label-7">
+              TRY AGAIN
+            </div>
+
+            <div class="wheel-label label-8">
+              TRY AGAIN
+            </div>
+
+          </div>
+
+
+
+          <!-- SPIN BUTTON -->
+
+          <button
+  id="spinButton"
+  class="spin-button"
+  type="button"
+  aria-label="Spin the wheel"
+>
+
+  <span class="spin-marv-circle">
+    <img
+      src="./marv-wheel.png"
+      alt=""
+      class="spin-marv-image"
+    >
+  </span>
+
+  <span class="spin-marv-label">
+    SPIN
+  </span>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           STATUS
+      ==================================================== -->
+
+      <div
+        class="game-status"
+        aria-live="polite"
+      >
+
+        <div
+          class="status-icon"
+          aria-hidden="true"
+        >
+          ✓
+        </div>
+
+        <span id="statusText">
+          Your daily spin is ready
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INFO CARDS
+    ====================================================== -->
+
+    <section class="info-grid">
+
+
+      <article class="info-card">
+
+
+        <div
+          class="info-number"
+          aria-hidden="true"
+        >
+          01
+        </div>
+
+
+        <div class="info-divider"></div>
+
+
+        <div class="info-copy">
+
+          <strong>
+            Daily spin
+          </strong>
+
+          <small>
+            Come back tomorrow
+            <br>
+            for another spin.
+          </small>
+
+        </div>
+
+
+        <div
+          class="info-card-icon"
+          aria-hidden="true"
+        >
+          ◫
+        </div>
+
+
+      </article>
+
+
+
+      <article class="info-card">
+
+
+        <div
+          class="info-number"
+          aria-hidden="true"
+        >
+          02
+        </div>
+
+
+        <div class="info-divider"></div>
+
+
+        <div class="info-copy">
+
+          <strong>
+            Member rewards
+          </strong>
+
+          <small>
+            Exclusive rewards
+            <br>
+            every day.
+          </small>
+
+        </div>
+
+
+        <div
+          class="info-card-icon"
+          aria-hidden="true"
+        >
+          🎁
+        </div>
+
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LATEST SPIN
+    ====================================================== -->
+
+    <section class="recent-win-card">
+
+
+      <div class="recent-win-copy">
+
+
+        <div class="recent-win-heading">
+
+          <span>
+            LATEST SPIN
+          </span>
+
+          <div
+            class="recent-heading-line"
+            aria-hidden="true"
+          ></div>
+
+          <span
+            class="recent-heading-star"
+            aria-hidden="true"
+          >
+            ✦
+          </span>
+
+        </div>
+
+
+        <h2 id="recentWin">
+          Nothing yet
+        </h2>
+
+
+        <p>
+          Your latest reward will appear here.
+        </p>
+
+
+        <button
+          class="view-rewards-button"
+          type="button"
+        >
+          VIEW ALL REWARDS
+        </button>
+
+
+      </div>
+
+
+
+      <div
+        class="recent-win-medallion"
+        aria-hidden="true"
+      >
+
+        <div class="recent-win-orbit orbit-1"></div>
+
+        <div class="recent-win-orbit orbit-2"></div>
+
+        <div class="recent-win-icon">
+          💎
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOTTOM STRIP
+    ====================================================== -->
+
+    <section class="premium-footer-strip">
+
+
+      <div class="footer-item">
+
+        <span
+          class="footer-icon"
+          aria-hidden="true"
+        >
+          ✦
+        </span>
+
+        <span>
+          DAILY REWARDS
+        </span>
+
+      </div>
+
+
+      <div
+        class="footer-separator"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="footer-item">
+
+        <span
+          class="footer-icon"
+          aria-hidden="true"
+        >
+          ✦
+        </span>
+
+        <span>
+          VIP FEATURES
+        </span>
+
+      </div>
+
+
+      <div
+        class="footer-separator"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="footer-item">
+
+        <span
+          class="footer-icon"
+          aria-hidden="true"
+        >
+          ★
+        </span>
+
+        <span>
+          EXCLUSIVE REWARDS
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       RESULT / WINNER POPUP
+  ====================================================== -->
+
+  <div
+    id="resultModal"
+    class="result-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="resultTitle"
+  >
+
+
+    <div class="result-card">
+
+
+      <div
+        class="result-top-glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <button
+        id="resultCloseX"
+        class="result-close-x"
+        type="button"
+        aria-label="Close result"
+      >
+        ×
+      </button>
+
+
+      <span class="result-kicker">
+        YOUR RESULT
+      </span>
+
+
+
+      <!-- MARVALOUS LOGO -->
+
+      <div class="result-icon">
+
+        <img
+          src="./marvalous-logo.png"
+          alt="Marvalous"
+          class="result-logo-image"
+        >
+
+      </div>
+
+
+
+      <h2 id="resultTitle">
+        Your Result
+      </h2>
+
+
+      <div
+        id="resultMessage"
+        class="result-message"
+      >
+        Your reward will appear here.
+      </div>
+
+
+      <button
+        id="closeResultButton"
+        class="result-continue-button"
+        type="button"
+      >
+        Done
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       VIEW ALL REWARDS POPUP
+  ====================================================== -->
+
+  <div
+    id="rewardsModal"
+    class="rewards-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="rewardsModalTitle"
+  >
+
+
+    <div class="rewards-modal-card">
+
+
+      <div
+        class="rewards-modal-glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <button
+        id="rewardsCloseX"
+        class="rewards-close-x"
+        type="button"
+        aria-label="Close rewards"
+      >
+        ×
+      </button>
+
+
+      <span class="rewards-kicker">
+        MARVALOUS REWARDS
+      </span>
+
+
+      <div class="rewards-star">
+        ★
+      </div>
+
+
+      <h2 id="rewardsModalTitle">
+        Today’s Rewards
+      </h2>
+
+
+      <p class="rewards-intro">
+        Here’s what your daily spin could reveal.
+      </p>
+
+
+      <div
+        id="rewardsList"
+        class="rewards-list"
+      ></div>
+
+
+      <button
+        id="rewardsCloseButton"
+        class="rewards-close-button"
+        type="button"
+      >
+        Close
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <script src="./app.js?v=3"></script>
+
+</body>
+
+</html>
