@@ -2316,11 +2316,9 @@ function buildRewardsList() {
               .toLowerCase() !== "none"
           ) {
 
-            detailLines.push(
-              `Minimum spend £${escapeHtml(
-                prize.minSpend
-              )}`
-            );
+      detailLines.push(
+  `Minimum spend £${Number(prize.minSpend).toFixed(2)}`
+);
 
           }
 
