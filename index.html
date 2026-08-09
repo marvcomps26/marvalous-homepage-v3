@@ -670,10 +670,10 @@ OneSignalDeferred.push(async function(OneSignal) {
     </a>
 
 
-<button
-  type="button"
+<a
+  href="#"
   class="nav-link"
-  onclick="openHowToPlay()"
+  onclick="openHowToPlay(); return false;"
 >
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <circle cx="12" cy="12" r="9"></circle>
@@ -681,8 +681,8 @@ OneSignalDeferred.push(async function(OneSignal) {
     <path d="M12 8h.01"></path>
   </svg>
 
-  <span>Info</span>
-</button>    
+  <span>How to Play</span>
+</a>
 
   </nav>
 <div id="howToPlayModal" class="how-to-play-modal">
