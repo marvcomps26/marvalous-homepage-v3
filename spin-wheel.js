@@ -1309,9 +1309,7 @@ function showWinningResult() {
       ? `
         <p class="claim-detail">
           Minimum spend:
-          £${escapeHtml(
-            currentPrize.minSpend
-          )}
+          £${Number(currentPrize.minSpend).toFixed(2)}
         </p>
       `
 
