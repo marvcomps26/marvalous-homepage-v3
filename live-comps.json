@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-11T06:02:16.585Z",
-  "todaysWinnerCount": 8,
+  "updatedAt": "2026-08-11T07:20:52.016Z",
+  "todaysWinnerCount": 33,
   "nextLiveAt": "2026-08-12T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Apple Or Android The Choice Is Yours",
       "url": "https://marvalouscompetitions.co.uk/competition/apple-or-android-the-choice-is-yours",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/509/conversions/01KWP5ZFD1C3TEH9CTB6ERKEWY-large.jpg",
-      "ticketsSold": 11473,
+      "ticketsSold": 11533,
       "totalTickets": 50000,
       "percentSold": 23,
       "ticketPrice": 0.1,
@@ -68,7 +68,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 4622,
+      "ticketsSold": 4647,
       "totalTickets": 30000,
       "percentSold": 15,
       "ticketPrice": 1,
