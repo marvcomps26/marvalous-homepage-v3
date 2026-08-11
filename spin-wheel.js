@@ -418,7 +418,7 @@ function prepareWheelPrizes() {
     wheelPrizes.push({
 
       prize:
-        "TRY AGAIN",
+        "?",
 
       chance:
         0,
