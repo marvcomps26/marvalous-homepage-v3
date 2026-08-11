@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T19:21:03.294Z",
+  "updatedAt": "2026-08-11T20:08:36.241Z",
   "todaysWinnerCount": 187,
   "nextLiveAt": "2026-08-12T18:00:00.000Z",
   "count": 11,
@@ -18,9 +18,9 @@
       "title": "Marvs Marvalous Bundle",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-marvalous-bundle",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/541/conversions/01KX97EGKE756M3E1RNQ9QDS4G-large.jpg",
-      "ticketsSold": 7039,
+      "ticketsSold": 7269,
       "totalTickets": 25000,
-      "percentSold": 28,
+      "percentSold": 29,
       "ticketPrice": 0.05,
       "instantWins": 10
     },
@@ -58,7 +58,7 @@
       "title": "Marvs Deep Sea Fortune",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-deep-sea-fortune",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/601/conversions/01KZ8R6WM17K1FGJQN47Q5EGKY-large.jpg",
-      "ticketsSold": 11155,
+      "ticketsSold": 11470,
       "totalTickets": 300000,
       "percentSold": 4,
       "ticketPrice": 0.03,
