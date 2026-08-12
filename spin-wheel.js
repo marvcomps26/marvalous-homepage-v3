@@ -462,7 +462,7 @@ function updateWheelLabels() {
       label.textContent =
         shortenWheelLabel(
           prize?.prize ||
-          "TRY AGAIN"
+          "???"
         );
 
     }
@@ -486,7 +486,7 @@ function shortenWheelLabel(
 
   if (!text) {
 
-    return "TRY AGAIN";
+    return "???";
 
   }
 
@@ -497,7 +497,7 @@ function shortenWheelLabel(
     )
   ) {
 
-    return "TRY AGAIN";
+    return "???";
 
   }
 
