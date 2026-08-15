@@ -1,9 +1,19 @@
 {
-  "updatedAt": "2026-08-15T14:01:55.834Z",
+  "updatedAt": "2026-08-15T14:11:20.514Z",
   "todaysWinnerCount": 99,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
-  "count": 9,
+  "count": 10,
   "competitions": [
+    {
+      "title": "Mike Nikias Cash Pot Drop",
+      "url": "https://marvalouscompetitions.co.uk/competition/mike-nikias-cash-pot-drop",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/612/conversions/01M02S06SNHXR8EDB6TCQTG7CN-large.jpg",
+      "ticketsSold": 0,
+      "totalTickets": 300000,
+      "percentSold": 0,
+      "ticketPrice": 0.3,
+      "instantWins": 10073
+    },
     {
       "title": "Scouse House With Joanne Goffey",
       "url": "https://marvalouscompetitions.co.uk/competition/scouse-house-with-joanne-goffey",
