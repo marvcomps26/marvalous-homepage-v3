@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-15T12:53:01.456Z",
+  "updatedAt": "2026-08-15T13:20:31.917Z",
   "todaysWinnerCount": 90,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
-  "count": 8,
+  "count": 9,
   "competitions": [
     {
       "title": "Scouse House With Joanne Goffey",
@@ -18,7 +18,7 @@
       "title": "Jodie Oates The Yorkshire Lass Lucky Gems",
       "url": "https://marvalouscompetitions.co.uk/competition/jodie-oates-the-yorkshire-lass-lucky-gems",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/564/conversions/01KY257FFPFH9WHKPZS9CEY7PM-large.jpg",
-      "ticketsSold": 16284,
+      "ticketsSold": 16304,
       "totalTickets": 300000,
       "percentSold": 5,
       "ticketPrice": 0.3,
@@ -55,6 +55,16 @@
       "instantWins": null
     },
     {
+      "title": "Arctic Marvs Tv Binge",
+      "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-tv-binge",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/610/conversions/01M02R331DP2MNKR8K3S5QHQVJ-large.jpg",
+      "ticketsSold": 0,
+      "totalTickets": 250000,
+      "percentSold": 0,
+      "ticketPrice": 0.01,
+      "instantWins": null
+    },
+    {
       "title": "Marvs Household Essential Air Fryer",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-household-essential-air-fryer",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/588/conversions/01KYA9YCC3FZGD30TRWMN14RXH-large.jpg",
@@ -78,7 +88,7 @@
       "title": "Arctic Marvs Site Credit Bonanza",
       "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-site-credit-bonanza",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/582/conversions/01KY2HF0Y2MHZDQCYRC6KVHGC6-large.jpg",
-      "ticketsSold": 29975,
+      "ticketsSold": 30035,
       "totalTickets": 550000,
       "percentSold": 5,
       "ticketPrice": 0.01,
