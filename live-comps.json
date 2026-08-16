@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-16T21:10:45.929Z",
-  "todaysWinnerCount": 130,
+  "updatedAt": "2026-08-16T21:33:30.299Z",
+  "todaysWinnerCount": 131,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 10,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Mike Nikias Cash Pot Drop",
       "url": "https://marvalouscompetitions.co.uk/competition/mike-nikias-cash-pot-drop",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/612/conversions/01M02S06SNHXR8EDB6TCQTG7CN-large.jpg",
-      "ticketsSold": 728,
+      "ticketsSold": 732,
       "totalTickets": 300000,
       "percentSold": 0,
       "ticketPrice": 0.3,
@@ -48,7 +48,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 5575,
+      "ticketsSold": 5576,
       "totalTickets": 30000,
       "percentSold": 19,
       "ticketPrice": 1,
