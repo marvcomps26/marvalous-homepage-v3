@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-16T19:43:07.668Z",
-  "todaysWinnerCount": 123,
+  "updatedAt": "2026-08-16T19:55:11.097Z",
+  "todaysWinnerCount": 125,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 10,
   "competitions": [
@@ -58,7 +58,7 @@
       "title": "Arctic Marvs Coffee Break",
       "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-coffee-break",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/585/conversions/01KY9P5AC8A9J1QA1MK5KFX67T-large.jpg",
-      "ticketsSold": 291,
+      "ticketsSold": 293,
       "totalTickets": 3000,
       "percentSold": 10,
       "ticketPrice": 0,
