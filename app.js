@@ -18,9 +18,10 @@ async function loadLiveCompetitions() {
   if (!competitionScroll) return;
 
   try {
-    const response = await fetch(`live-comps.json?t=${Date.now()}`, {
-      cache: "no-store"
-    });
+  const response = await fetch(
+  `https://raw.githubusercontent.com/marvcomps26/marvalous-homepage-v3/main/live-comps.json?t=${Date.now()}`,
+  { cache: "no-store" }
+);
 
     if (!response.ok) {
       throw new Error("Could not load live competitions.");
@@ -178,9 +179,10 @@ async function loadTodaysWinnerCount() {
   if (!winnerCountElement) return;
 
   try {
-    const response = await fetch(`live-comps.json?t=${Date.now()}`, {
-      cache: "no-store"
-    });
+  const response = await fetch(
+  `https://raw.githubusercontent.com/marvcomps26/marvalous-homepage-v3/main/live-comps.json?t=${Date.now()}`,
+  { cache: "no-store" }
+);
 
     if (!response.ok) {
       throw new Error("Could not load today's winner count.");
@@ -261,9 +263,10 @@ async function loadNextLiveDraw() {
   }
 
   try {
-    const response = await fetch(`live-comps.json?t=${Date.now()}`, {
-      cache: "no-store"
-    });
+   const response = await fetch(
+  `https://raw.githubusercontent.com/marvcomps26/marvalous-homepage-v3/main/live-comps.json?t=${Date.now()}`,
+  { cache: "no-store" }
+);
 
     if (!response.ok) {
       throw new Error("Could not load next live draw.");
