@@ -40,6 +40,6 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update live competition data"
+          git commit -m "Update live competition data [skip netlify]"
           git pull --rebase origin main
           git push origin main
