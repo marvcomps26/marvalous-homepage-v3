@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-18T20:35:15.089Z",
-  "todaysWinnerCount": 524,
+  "updatedAt": "2026-08-18T20:54:28.167Z",
+  "todaysWinnerCount": 530,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 10,
   "competitions": [
@@ -18,7 +18,7 @@
       "title": "Scouse House With Joanne Goffey",
       "url": "https://marvalouscompetitions.co.uk/competition/scouse-house-with-joanne-goffey",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/589/conversions/01KYC9MGTBJQAXNRNA26ZRYR8N-large.jpg",
-      "ticketsSold": 101606,
+      "ticketsSold": 101694,
       "totalTickets": 170000,
       "percentSold": 60,
       "ticketPrice": 0.07,
@@ -78,7 +78,7 @@
       "title": "Marvs Household Essential Air Fryer",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-household-essential-air-fryer",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/588/conversions/01KYA9YCC3FZGD30TRWMN14RXH-large.jpg",
-      "ticketsSold": 31082,
+      "ticketsSold": 31112,
       "totalTickets": 75000,
       "percentSold": 41,
       "ticketPrice": 0.01,
