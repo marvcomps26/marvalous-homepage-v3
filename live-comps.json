@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-19T09:36:47.976Z",
+  "updatedAt": "2026-08-19T10:02:21.944Z",
   "todaysWinnerCount": 49,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
-  "count": 10,
+  "count": 11,
   "competitions": [
     {
       "title": "Mike Nikias Cash Pot Drop",
@@ -13,6 +13,16 @@
       "percentSold": 1,
       "ticketPrice": 0.3,
       "instantWins": 10073
+    },
+    {
+      "title": "Dronegirls Lucky Wheel",
+      "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
+      "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/conversions/01M0CMTXWB4WXYTAZ9JM1AJGSZ-large.jpg",
+      "ticketsSold": 0,
+      "totalTickets": 300000,
+      "percentSold": 0,
+      "ticketPrice": 0.25,
+      "instantWins": 330
     },
     {
       "title": "Scouse House With Joanne Goffey",
