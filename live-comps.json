@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-19T02:44:46.833Z",
-  "todaysWinnerCount": 21,
+  "updatedAt": "2026-08-19T03:33:13.627Z",
+  "todaysWinnerCount": 22,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 10,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Mike Nikias Cash Pot Drop",
       "url": "https://marvalouscompetitions.co.uk/competition/mike-nikias-cash-pot-drop",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/612/conversions/01M02S06SNHXR8EDB6TCQTG7CN-large.jpg",
-      "ticketsSold": 1720,
+      "ticketsSold": 1754,
       "totalTickets": 300000,
       "percentSold": 1,
       "ticketPrice": 0.3,
@@ -68,7 +68,7 @@
       "title": "Arctic Marvs Tv Binge",
       "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-tv-binge",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/610/conversions/01M02R331DP2MNKR8K3S5QHQVJ-large.jpg",
-      "ticketsSold": 2911,
+      "ticketsSold": 2921,
       "totalTickets": 250000,
       "percentSold": 1,
       "ticketPrice": 0.01,
