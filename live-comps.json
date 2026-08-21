@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-21T07:57:34.511Z",
-  "todaysWinnerCount": 49,
+  "updatedAt": "2026-08-21T08:37:58.389Z",
+  "todaysWinnerCount": 55,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -18,7 +18,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/conversions/01M0CMTXWB4WXYTAZ9JM1AJGSZ-large.jpg",
-      "ticketsSold": 7117,
+      "ticketsSold": 7128,
       "totalTickets": 300000,
       "percentSold": 2,
       "ticketPrice": 0.25,
@@ -28,7 +28,7 @@
       "title": "Scouse House With Joanne Goffey",
       "url": "https://marvalouscompetitions.co.uk/competition/scouse-house-with-joanne-goffey",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/589/conversions/01KYC9MGTBJQAXNRNA26ZRYR8N-large.jpg",
-      "ticketsSold": 108067,
+      "ticketsSold": 108117,
       "totalTickets": 170000,
       "percentSold": 64,
       "ticketPrice": 0.07,
@@ -98,9 +98,9 @@
       "title": "Marvs Back To School",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-back-to-school",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/574/conversions/01KY290S1YRPKK6CKBR8QF26M8-large.jpg",
-      "ticketsSold": 4207,
+      "ticketsSold": 4241,
       "totalTickets": 65000,
-      "percentSold": 6,
+      "percentSold": 7,
       "ticketPrice": 0.05,
       "instantWins": null
     },
