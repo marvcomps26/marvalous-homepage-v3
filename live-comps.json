@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-22T09:58:52.625Z",
-  "todaysWinnerCount": 135,
+  "updatedAt": "2026-08-22T10:24:35.289Z",
+  "todaysWinnerCount": 144,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -58,7 +58,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 6656,
+      "ticketsSold": 6661,
       "totalTickets": 30000,
       "percentSold": 22,
       "ticketPrice": 1,
@@ -68,7 +68,7 @@
       "title": "Arctic Marvs Coffee Break",
       "url": "https://marvalouscompetitions.co.uk/competition/arctic-marvs-coffee-break",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/585/conversions/01KY9P5AC8A9J1QA1MK5KFX67T-large.jpg",
-      "ticketsSold": 359,
+      "ticketsSold": 360,
       "totalTickets": 3000,
       "percentSold": 12,
       "ticketPrice": 0,
