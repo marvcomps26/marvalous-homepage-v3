@@ -465,3 +465,32 @@ window.addEventListener("appinstalled", () => {
 if (isStandalone && installBtn) {
   installBtn.style.display = "none";
 }
+/* =========================
+   18+ UK & NI ACCESS GATE
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ageGate = document.getElementById("ageGate");
+
+  if (!ageGate) return;
+
+  const confirmed = localStorage.getItem("marvalousAgeConfirmed");
+
+  if (confirmed !== "yes") {
+    ageGate.hidden = false;
+  }
+});
+
+function confirmAgeGate() {
+  localStorage.setItem("marvalousAgeConfirmed", "yes");
+
+  const ageGate = document.getElementById("ageGate");
+
+  if (ageGate) {
+    ageGate.hidden = true;
+  }
+}
+
+function declineAgeGate() {
+  window.location.href = "https://www.google.com/";
+}
