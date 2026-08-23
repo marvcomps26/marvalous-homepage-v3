@@ -2420,3 +2420,80 @@ button.quick-access-card span{
   color: var(--gold);
 }
 
+/* =========================
+   18+ UK & NI ACCESS GATE
+========================= */
+
+.age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 24px;
+
+  background:
+    radial-gradient(circle at top, rgba(150, 0, 180, 0.35), transparent 45%),
+    #050006;
+}
+
+.age-gate[hidden] {
+  display: none;
+}
+
+.age-gate-card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.age-gate-logo {
+  width: 150px;
+  max-width: 55%;
+  margin: 0 auto 30px;
+  display: block;
+}
+
+.age-gate-card h1 {
+  margin: 0 0 16px;
+  font-family: "Sora", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.age-gate-card p {
+  margin: 0 auto 32px;
+  max-width: 340px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.age-confirm-button,
+.age-decline-button {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.age-confirm-button {
+  border: 0;
+  background: #ffffff;
+  color: #120014;
+  margin-bottom: 12px;
+}
+
+.age-decline-button {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #ffffff;
+}
