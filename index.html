@@ -51,6 +51,42 @@ OneSignalDeferred.push(async function(OneSignal) {
 
 <body>
 
+  <!-- 18+ UK & NI ACCESS GATE -->
+<div id="ageGate" class="age-gate" hidden>
+  <div class="age-gate-card">
+
+    <img
+      src="logo.png"
+      class="age-gate-logo"
+      alt="Marvalous Competitions"
+    >
+
+    <h1>UK & NI ONLY · 18+</h1>
+
+    <p>
+      You must be aged 18 or over and physically located
+      in the UK or Northern Ireland to continue.
+    </p>
+
+    <button
+      type="button"
+      class="age-confirm-button"
+      onclick="confirmAgeGate()"
+    >
+      CONFIRM
+    </button>
+
+    <button
+      type="button"
+      class="age-decline-button"
+      onclick="declineAgeGate()"
+    >
+      DECLINE
+    </button>
+
+  </div>
+</div>
+
   <div id="splash" class="splash">
   <div class="splash-logo">
     <div class="splash-glow"></div>
