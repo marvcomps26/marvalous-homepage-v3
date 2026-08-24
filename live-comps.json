@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-24T21:38:04.870Z",
-  "todaysWinnerCount": 395,
+  "updatedAt": "2026-08-24T21:59:12.696Z",
+  "todaysWinnerCount": 396,
   "nextLiveAt": "2026-08-26T18:00:00.000Z",
   "count": 11,
   "competitions": [
@@ -18,7 +18,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/conversions/01M0CMTXWB4WXYTAZ9JM1AJGSZ-large.jpg",
-      "ticketsSold": 11462,
+      "ticketsSold": 11491,
       "totalTickets": 300000,
       "percentSold": 4,
       "ticketPrice": 0.25,
@@ -58,7 +58,7 @@
       "title": "Marvs Every Scratch Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-every-scratch-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/532/conversions/01KX6EQ37WXFK3Z8F1QTTHA7TT-large.jpg",
-      "ticketsSold": 7133,
+      "ticketsSold": 7134,
       "totalTickets": 30000,
       "percentSold": 24,
       "ticketPrice": 1,
