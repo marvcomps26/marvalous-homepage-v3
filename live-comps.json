@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-04T22:29:49.525Z",
-  "todaysWinnerCount": 2005,
+  "updatedAt": "2026-09-05T00:17:49.626Z",
+  "todaysWinnerCount": 0,
   "nextLiveAt": "2026-09-06T18:00:00.000Z",
   "count": 10,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/conversions/01M1NZ8AJY9WEKKTBCV999Z0JD-large.jpg",
-      "ticketsSold": 11409,
+      "ticketsSold": 11438,
       "totalTickets": 300000,
       "percentSold": 4,
       "ticketPrice": 0.07,
@@ -48,7 +48,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/conversions/01M0CMTXWB4WXYTAZ9JM1AJGSZ-large.jpg",
-      "ticketsSold": 31767,
+      "ticketsSold": 31807,
       "totalTickets": 300000,
       "percentSold": 11,
       "ticketPrice": 0.25,
