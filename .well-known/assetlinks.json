@@ -1,1 +1,12 @@
-
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.marvalous.competitions",
+      "sha256_cert_fingerprints": [
+        "89:29:72:8F:9C:18:7F:AE:68:AD:B9:CC:4B:FC:2B:DD:82:C2:EF:E9:29:E6:13:69:14:7D:9F:91:A3:13:7A:CB"
+      ]
+    }
+  }
+]
