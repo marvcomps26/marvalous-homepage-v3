@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-19T09:18:58.538Z",
-  "todaysWinnerCount": 204,
+  "updatedAt": "2026-09-19T09:47:44.730Z",
+  "todaysWinnerCount": 223,
   "nextLiveAt": "2026-09-20T12:35:00.000Z",
   "count": 13,
   "competitions": [
@@ -38,9 +38,9 @@
       "title": "Marvs Tea Break",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-tea-break",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/636/01M13Z73BMJ2XR9Z4CVG4HMYWX.jpg",
-      "ticketsSold": 259,
+      "ticketsSold": 261,
       "totalTickets": 3000,
-      "percentSold": 8.6,
+      "percentSold": 8.7,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -68,7 +68,7 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 34408,
+      "ticketsSold": 34503,
       "totalTickets": 300000,
       "percentSold": 11.5,
       "ticketPrice": null,
@@ -78,9 +78,9 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 39975,
+      "ticketsSold": 40075,
       "totalTickets": 300000,
-      "percentSold": 13.3,
+      "percentSold": 13.4,
       "ticketPrice": null,
       "instantWins": 50100
     },
