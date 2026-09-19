@@ -157,67 +157,47 @@ title = title
   return match ? Number(match[1]) : null;
 });
 
-const drawDates = await page.evaluate(() => {
-  const links = Array.from(
-    document.querySelectorAll('a[href*="/competition/"]')
-  );
+const drawDates = [];
 
-  return links
-    .map(link => {
-      let card = link;
+for (const competition of competitions) {
+  try {
+    const detailPage = await browser.newPage({
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36"
+    });
 
-      for (let level = 0; level < 3 && card; level++) {
-        const text = (card.innerText || "")
-          .replace(/\s+/g, " ")
-          .trim();
+    await detailPage.goto(competition.url, {
+      waitUntil: "domcontentloaded",
+      timeout: 60000
+    });
 
-        const relativeDateMatch = text.match(
-  /\b(Today|Tomorrow)\s+(\d{1,2}):(\d{2})(am|pm)\b/i
-);
+    await detailPage.waitForTimeout(2000);
 
-        if (relativeDateMatch) {
-          const relativeDate = new Date();
+    const text = (await detailPage.locator("body").innerText())
+      .replace(/\s+/g, " ")
+      .trim();
 
-          if (
-            relativeDateMatch[1].toLowerCase() === "tomorrow"
-          ) {
-            relativeDate.setDate(relativeDate.getDate() + 1);
-          }
+    const match = text.match(
+      /Draw\s+On\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)/i
+    );
 
-          return {
-            month: [
-              "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ][relativeDate.getMonth()],
-            day: relativeDate.getDate(),
-            hour: 6,
-            minute: 0,
-            ampm: "pm"
-          };
-        }
+    if (match) {
+      drawDates.push({
+        month: match[1],
+        day: Number(match[2]),
+        hour: Number(match[3]),
+        minute: Number(match[4]),
+        ampm: match[5].toLowerCase()
+      });
+    }
 
-        const match = text.match(
-  /\b(?:Draw\s+On\s+)?(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
-);
-
-        if (match) {
-  return {
-    month: match[1],
-    day: Number(match[2]),
-    hour: Number(match[3]),
-    minute: Number(match[4]),
-    ampm: match[5].toLowerCase()
-  };
-        }
-
-        card = card.parentElement;
-      }
-
-      return null;
-    })
-    .filter(Boolean);
-});
-
+    await detailPage.close();
+  } catch (error) {
+    console.log(
+      `Could not read draw date for ${competition.title}`
+    );
+  }
+}
 
 const monthNumbers = {
   Jan: 0,
@@ -243,19 +223,17 @@ const upcomingDrawDates = drawDates
     if (draw.ampm === "pm" && hour !== 12) hour += 12;
     if (draw.ampm === "am" && hour === 12) hour = 0;
 
-    let year = now.getFullYear();
-
     let date = new Date(
-      year,
+      now.getFullYear(),
       monthNumbers[draw.month],
       draw.day,
       hour,
       draw.minute
     );
-  
+
     if (date < now) {
       date = new Date(
-        year + 1,
+        now.getFullYear() + 1,
         monthNumbers[draw.month],
         draw.day,
         hour,
@@ -271,7 +249,6 @@ const nextLiveAt =
   upcomingDrawDates.length
     ? upcomingDrawDates[0].toISOString()
     : null;
-
 
 const output = {
   updatedAt: new Date().toISOString(),
