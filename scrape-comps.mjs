@@ -213,7 +213,8 @@ const monthNumbers = {
   Nov: 10,
   Dec: 11
 };
-
+  
+process.env.TZ = "Europe/London";
 const now = new Date();
 
 const upcomingDrawDates = drawDates
