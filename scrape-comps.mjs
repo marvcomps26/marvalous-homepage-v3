@@ -73,9 +73,9 @@ try {
         /(\d+(?:\.\d+)?)%\s*Sold/i
       );
 
-      const instantWinsMatch = text.match(
-        /Instant Wins?\s*([\d,]+)/i
-      );
+     const instantWinsMatch =
+  text.match(/([\d,]+)\s*Instant Wins?/i) ||
+  text.match(/Instant Wins?\s*([\d,]+)/i);
 
       const poundPriceMatch = text.match(
         /£\s*(\d+(?:\.\d+)?)\s*per ticket/i
@@ -197,17 +197,17 @@ const drawDates = await page.evaluate(() => {
         }
 
         const match = text.match(
-          /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
-        );
+  /\b(?:Draw\s+On\s+)?(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{1,2}):(\d{2})(am|pm)\b/i
+);
 
         if (match) {
-          return {
-            month: match[1],
-            day: Number(match[2]),
-            hour: 6,
-            minute: 0,
-            ampm: "pm"
-          };
+  return {
+    month: match[1],
+    day: Number(match[2]),
+    hour: Number(match[3]),
+    minute: Number(match[4]),
+    ampm: match[5].toLowerCase()
+  };
         }
 
         card = card.parentElement;
