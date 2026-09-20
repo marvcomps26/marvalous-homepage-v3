@@ -248,7 +248,7 @@ const upcomingDrawDates = drawDates
 
 const nextLiveAt =
   upcomingDrawDates.length
-    ? new Date(upcomingDrawDates[0].getTime() - (60 * 60 * 1000)).toISOString()
+    ? upcomingDrawDates[0].toISOString()
     : null;
 
 const output = {
