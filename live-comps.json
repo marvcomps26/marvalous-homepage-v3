@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-22T16:02:15.069Z",
-  "todaysWinnerCount": 82,
+  "updatedAt": "2026-09-22T16:16:48.102Z",
+  "todaysWinnerCount": 84,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -8,9 +8,9 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/01M0CMTXWB4WXYTAZ9JM1AJGSZ.jpg",
-      "ticketsSold": 40026,
+      "ticketsSold": 40066,
       "totalTickets": 300000,
-      "percentSold": 13.3,
+      "percentSold": 13.4,
       "ticketPrice": null,
       "instantWins": 330
     },
