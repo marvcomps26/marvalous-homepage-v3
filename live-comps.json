@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T16:16:48.102Z",
+  "updatedAt": "2026-09-22T16:32:09.601Z",
   "todaysWinnerCount": 84,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
@@ -8,7 +8,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/01M0CMTXWB4WXYTAZ9JM1AJGSZ.jpg",
-      "ticketsSold": 40066,
+      "ticketsSold": 40146,
       "totalTickets": 300000,
       "percentSold": 13.4,
       "ticketPrice": null,
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 6465,
+      "ticketsSold": 6539,
       "totalTickets": 200000,
-      "percentSold": 3.2,
+      "percentSold": 3.3,
       "ticketPrice": null,
       "instantWins": 5126
     },
