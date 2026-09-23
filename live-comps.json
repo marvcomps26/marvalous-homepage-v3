@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-23T23:02:06.010Z",
-  "todaysWinnerCount": 0,
+  "updatedAt": "2026-09-23T23:16:43.695Z",
+  "todaysWinnerCount": 14,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -88,7 +88,7 @@
       "title": "Marvs Penny For The Guy",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-penny-for-the-guy",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/679/01M1RG7JD6KJJSYBM9G44SRFJC.jpg",
-      "ticketsSold": 11261,
+      "ticketsSold": 11291,
       "totalTickets": 200000,
       "percentSold": 5.6,
       "ticketPrice": null,
@@ -98,7 +98,7 @@
       "title": "Marvs Gunpowder Plot",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gunpowder-plot",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/681/01M1RHQWAYXQE1X05JQNYV145H.jpg",
-      "ticketsSold": 27222,
+      "ticketsSold": 27389,
       "totalTickets": 300000,
       "percentSold": 9.1,
       "ticketPrice": null,
@@ -108,9 +108,9 @@
       "title": "Liverpool V Man United 2 Vip Hospitality Tickets At Anfield",
       "url": "https://marvalouscompetitions.co.uk/competition/liverpool-v-man-united-2-vip-hospitality-tickets-at-anfield",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/690/01M1YFTY5F4GMHG8ESW1D5FMWJ.jpg",
-      "ticketsSold": 147,
+      "ticketsSold": 151,
       "totalTickets": 5099,
-      "percentSold": 2.9,
+      "percentSold": 3,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -118,9 +118,9 @@
       "title": "Marvs Autumn Vault Every Ticket Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-autumn-vault-every-ticket-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/692/01M27Z84FSJ9F73TCE8MCTXHHJ.jpg",
-      "ticketsSold": 937,
+      "ticketsSold": 948,
       "totalTickets": 30000,
-      "percentSold": 3.1,
+      "percentSold": 3.2,
       "ticketPrice": null,
       "instantWins": 30000
     }
