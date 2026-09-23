@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-23T16:46:47.435Z",
-  "todaysWinnerCount": 76,
+  "updatedAt": "2026-09-23T17:02:24.476Z",
+  "todaysWinnerCount": 99,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -38,9 +38,9 @@
       "title": "Heathers Household Bundle",
       "url": "https://marvalouscompetitions.co.uk/competition/heathers-household-bundle",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/707/01M2NHF8J2Q56VM0YKSC57G1X8.jpg",
-      "ticketsSold": 114,
+      "ticketsSold": 164,
       "totalTickets": 5000,
-      "percentSold": 2.3,
+      "percentSold": 3.3,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -58,7 +58,7 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 40738,
+      "ticketsSold": 40833,
       "totalTickets": 300000,
       "percentSold": 13.6,
       "ticketPrice": null,
@@ -68,9 +68,9 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 46647,
+      "ticketsSold": 46747,
       "totalTickets": 300000,
-      "percentSold": 15.5,
+      "percentSold": 15.6,
       "ticketPrice": null,
       "instantWins": 50100
     },
