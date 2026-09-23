@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-23T16:02:10.781Z",
-  "todaysWinnerCount": 45,
+  "updatedAt": "2026-09-23T16:16:37.516Z",
+  "todaysWinnerCount": 60,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 7289,
+      "ticketsSold": 8017,
       "totalTickets": 200000,
-      "percentSold": 3.6,
+      "percentSold": 4,
       "ticketPrice": null,
       "instantWins": 5126
     },
@@ -88,9 +88,9 @@
       "title": "Marvs Penny For The Guy",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-penny-for-the-guy",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/679/01M1RG7JD6KJJSYBM9G44SRFJC.jpg",
-      "ticketsSold": 11051,
+      "ticketsSold": 11261,
       "totalTickets": 200000,
-      "percentSold": 5.5,
+      "percentSold": 5.6,
       "ticketPrice": null,
       "instantWins": null
     },
