@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-24T18:32:04.058Z",
-  "todaysWinnerCount": 89,
+  "updatedAt": "2026-09-24T18:46:49.429Z",
+  "todaysWinnerCount": 95,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -58,7 +58,7 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 41188,
+      "ticketsSold": 41218,
       "totalTickets": 300000,
       "percentSold": 13.7,
       "ticketPrice": null,
@@ -68,7 +68,7 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 47088,
+      "ticketsSold": 47118,
       "totalTickets": 300000,
       "percentSold": 15.7,
       "ticketPrice": null,
