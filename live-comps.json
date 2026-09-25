@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-25T15:02:14.550Z",
-  "todaysWinnerCount": 109,
+  "updatedAt": "2026-09-25T15:32:12.053Z",
+  "todaysWinnerCount": 110,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -38,9 +38,9 @@
       "title": "Heathers Household Bundle",
       "url": "https://marvalouscompetitions.co.uk/competition/heathers-household-bundle",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/707/01M2NHF8J2Q56VM0YKSC57G1X8.jpg",
-      "ticketsSold": 165,
+      "ticketsSold": 210,
       "totalTickets": 5000,
-      "percentSold": 3.3,
+      "percentSold": 4.2,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -48,7 +48,7 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 10034,
+      "ticketsSold": 10054,
       "totalTickets": 200000,
       "percentSold": 5,
       "ticketPrice": null,
@@ -78,9 +78,9 @@
       "title": "Marvs Gta 6 Bundle",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gta-6-bundle",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/639/01M143R3HJ31GT3F63CNXGA8G8.jpg",
-      "ticketsSold": 17771,
+      "ticketsSold": 17783,
       "totalTickets": 150000,
-      "percentSold": 11.8,
+      "percentSold": 11.9,
       "ticketPrice": null,
       "instantWins": 100
     },
