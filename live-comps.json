@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-25T15:32:12.053Z",
-  "todaysWinnerCount": 110,
+  "updatedAt": "2026-09-25T19:31:53.182Z",
+  "todaysWinnerCount": 183,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/01M0CMTXWB4WXYTAZ9JM1AJGSZ.jpg",
-      "ticketsSold": 40953,
+      "ticketsSold": 41184,
       "totalTickets": 300000,
       "percentSold": 13.7,
       "ticketPrice": null,
@@ -28,9 +28,9 @@
       "title": "Aimees Prize Plinko",
       "url": "https://marvalouscompetitions.co.uk/competition/aimees-prize-plinko",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/645/01M1CF4D88ESR76P8NQ2PAAWWD.jpg",
-      "ticketsSold": 4971,
+      "ticketsSold": 4995,
       "totalTickets": 50000,
-      "percentSold": 9.9,
+      "percentSold": 10,
       "ticketPrice": null,
       "instantWins": 112
     },
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 10054,
+      "ticketsSold": 10870,
       "totalTickets": 200000,
-      "percentSold": 5,
+      "percentSold": 5.4,
       "ticketPrice": null,
       "instantWins": 5126
     },
@@ -88,9 +88,9 @@
       "title": "Marvs Penny For The Guy",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-penny-for-the-guy",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/679/01M1RG7JD6KJJSYBM9G44SRFJC.jpg",
-      "ticketsSold": 11381,
+      "ticketsSold": 11531,
       "totalTickets": 200000,
-      "percentSold": 5.7,
+      "percentSold": 5.8,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -98,9 +98,9 @@
       "title": "Marvs Gunpowder Plot",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gunpowder-plot",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/681/01M1RHQWAYXQE1X05JQNYV145H.jpg",
-      "ticketsSold": 27851,
+      "ticketsSold": 28367,
       "totalTickets": 300000,
-      "percentSold": 9.3,
+      "percentSold": 9.5,
       "ticketPrice": null,
       "instantWins": 5107
     },
@@ -118,9 +118,9 @@
       "title": "Marvs Autumn Vault Every Ticket Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-autumn-vault-every-ticket-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/692/01M27Z84FSJ9F73TCE8MCTXHHJ.jpg",
-      "ticketsSold": 1039,
+      "ticketsSold": 1076,
       "totalTickets": 30000,
-      "percentSold": 3.5,
+      "percentSold": 3.6,
       "ticketPrice": null,
       "instantWins": 30000
     }
