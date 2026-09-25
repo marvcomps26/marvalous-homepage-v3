@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-25T12:46:41.828Z",
-  "todaysWinnerCount": 48,
+  "updatedAt": "2026-09-25T13:02:05.175Z",
+  "todaysWinnerCount": 52,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 9877,
+      "ticketsSold": 9977,
       "totalTickets": 200000,
-      "percentSold": 4.9,
+      "percentSold": 5,
       "ticketPrice": null,
       "instantWins": 5126
     },
@@ -88,7 +88,7 @@
       "title": "Marvs Penny For The Guy",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-penny-for-the-guy",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/679/01M1RG7JD6KJJSYBM9G44SRFJC.jpg",
-      "ticketsSold": 11361,
+      "ticketsSold": 11371,
       "totalTickets": 200000,
       "percentSold": 5.7,
       "ticketPrice": null,
@@ -98,7 +98,7 @@
       "title": "Marvs Gunpowder Plot",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gunpowder-plot",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/681/01M1RHQWAYXQE1X05JQNYV145H.jpg",
-      "ticketsSold": 27770,
+      "ticketsSold": 27810,
       "totalTickets": 300000,
       "percentSold": 9.3,
       "ticketPrice": null,
