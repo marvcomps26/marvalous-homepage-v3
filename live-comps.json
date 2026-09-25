@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-25T06:16:41.238Z",
-  "todaysWinnerCount": 8,
+  "updatedAt": "2026-09-25T06:31:57.433Z",
+  "todaysWinnerCount": 11,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 9249,
+      "ticketsSold": 9349,
       "totalTickets": 200000,
-      "percentSold": 4.6,
+      "percentSold": 4.7,
       "ticketPrice": null,
       "instantWins": 5126
     },
