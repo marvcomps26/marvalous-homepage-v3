@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-27T02:14:41.767Z",
-  "todaysWinnerCount": 0,
+  "updatedAt": "2026-09-27T08:22:12.451Z",
+  "todaysWinnerCount": 15,
   "nextLiveAt": "2026-09-27T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -8,7 +8,7 @@
       "title": "Dronegirls Lucky Wheel",
       "url": "https://marvalouscompetitions.co.uk/competition/dronegirls-lucky-wheel",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/633/01M0CMTXWB4WXYTAZ9JM1AJGSZ.jpg",
-      "ticketsSold": 41853,
+      "ticketsSold": 41893,
       "totalTickets": 300000,
       "percentSold": 14,
       "ticketPrice": null,
@@ -48,9 +48,9 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 11638,
+      "ticketsSold": 11838,
       "totalTickets": 200000,
-      "percentSold": 5.8,
+      "percentSold": 5.9,
       "ticketPrice": null,
       "instantWins": 5126
     },
@@ -118,7 +118,7 @@
       "title": "Marvs Autumn Vault Every Ticket Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-autumn-vault-every-ticket-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/692/01M27Z84FSJ9F73TCE8MCTXHHJ.jpg",
-      "ticketsSold": 1194,
+      "ticketsSold": 1208,
       "totalTickets": 30000,
       "percentSold": 4,
       "ticketPrice": null,
