@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-28T23:35:40.818Z",
-  "todaysWinnerCount": 9,
+  "updatedAt": "2026-09-29T02:44:22.561Z",
+  "todaysWinnerCount": 29,
   "nextLiveAt": "2026-10-04T13:35:00.000Z",
   "count": 11,
   "competitions": [
@@ -68,7 +68,7 @@
       "title": "Marvs Penny For The Guy",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-penny-for-the-guy",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/679/01M1RG7JD6KJJSYBM9G44SRFJC.jpg",
-      "ticketsSold": 12912,
+      "ticketsSold": 12932,
       "totalTickets": 200000,
       "percentSold": 6.5,
       "ticketPrice": null,
@@ -78,7 +78,7 @@
       "title": "Marvs Gunpowder Plot",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gunpowder-plot",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/681/01M1RHQWAYXQE1X05JQNYV145H.jpg",
-      "ticketsSold": 29971,
+      "ticketsSold": 30138,
       "totalTickets": 300000,
       "percentSold": 10,
       "ticketPrice": null,
@@ -88,9 +88,9 @@
       "title": "Steelees Lucky Break",
       "url": "https://marvalouscompetitions.co.uk/competition/steelees-lucky-break",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/730/01M3KS1SB25A32GTBKEDAM9JA6.jpg",
-      "ticketsSold": 309,
+      "ticketsSold": 389,
       "totalTickets": 27500,
-      "percentSold": 1.1,
+      "percentSold": 1.4,
       "ticketPrice": null,
       "instantWins": 3364
     },
