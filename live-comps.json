@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T21:25:10.657Z",
-  "todaysWinnerCount": 87,
+  "updatedAt": "2026-10-01T00:49:19.795Z",
+  "todaysWinnerCount": 36,
   "nextLiveAt": "2026-10-04T13:35:00.000Z",
   "count": 12,
   "competitions": [
@@ -28,7 +28,7 @@
       "title": "Marvs Bingo Night",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-bingo-night",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/710/01M2XAC0R7NR38J6BVASQFV1PP.jpg",
-      "ticketsSold": 17800,
+      "ticketsSold": 17859,
       "totalTickets": 200000,
       "percentSold": 8.9,
       "ticketPrice": null,
@@ -38,7 +38,7 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 45760,
+      "ticketsSold": 45765,
       "totalTickets": 300000,
       "percentSold": 15.3,
       "ticketPrice": null,
@@ -48,7 +48,7 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 51952,
+      "ticketsSold": 51962,
       "totalTickets": 300000,
       "percentSold": 17.3,
       "ticketPrice": null,
@@ -118,9 +118,9 @@
       "title": "Marvs Autumn Vault Every Ticket Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-autumn-vault-every-ticket-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/692/01M27Z84FSJ9F73TCE8MCTXHHJ.jpg",
-      "ticketsSold": 1620,
+      "ticketsSold": 1656,
       "totalTickets": 30000,
-      "percentSold": 5.4,
+      "percentSold": 5.5,
       "ticketPrice": null,
       "instantWins": 30000
     }
