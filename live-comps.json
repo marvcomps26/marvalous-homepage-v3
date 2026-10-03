@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T14:18:32.933Z",
+  "updatedAt": "2026-10-03T18:04:27.342Z",
   "todaysWinnerCount": 81,
   "nextLiveAt": "2026-10-04T13:35:00.000Z",
   "count": 13,
@@ -8,9 +8,9 @@
       "title": "Aimees Prize Plinko",
       "url": "https://marvalouscompetitions.co.uk/competition/aimees-prize-plinko",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/645/01M1CF4D88ESR76P8NQ2PAAWWD.jpg",
-      "ticketsSold": 5957,
+      "ticketsSold": 5986,
       "totalTickets": 50000,
-      "percentSold": 11.9,
+      "percentSold": 12,
       "ticketPrice": null,
       "instantWins": 112
     },
@@ -68,9 +68,9 @@
       "title": "Marvs Ding Dong Giveaway",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-ding-dong-giveaway",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/760/01M3XXBR8H64FCJM9S8QY4HBAN.jpg",
-      "ticketsSold": 34,
+      "ticketsSold": 36,
       "totalTickets": 3000,
-      "percentSold": 1.1,
+      "percentSold": 1.2,
       "ticketPrice": null,
       "instantWins": null
     },
