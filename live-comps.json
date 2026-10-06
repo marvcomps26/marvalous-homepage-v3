@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-05T22:48:14.045Z",
-  "todaysWinnerCount": 463,
+  "updatedAt": "2026-10-06T02:33:41.872Z",
+  "todaysWinnerCount": 2,
   "nextLiveAt": "2026-10-18T13:35:00.000Z",
   "count": 14,
   "competitions": [
@@ -58,9 +58,9 @@
       "title": "Marvs Ding Dong Giveaway",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-ding-dong-giveaway",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/760/01M3XXBR8H64FCJM9S8QY4HBAN.jpg",
-      "ticketsSold": 66,
+      "ticketsSold": 68,
       "totalTickets": 3000,
-      "percentSold": 2.2,
+      "percentSold": 2.3,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -128,7 +128,7 @@
       "title": "Marvs Autumn Vault Every Ticket Wins",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-autumn-vault-every-ticket-wins",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/692/01M27Z84FSJ9F73TCE8MCTXHHJ.jpg",
-      "ticketsSold": 1867,
+      "ticketsSold": 1869,
       "totalTickets": 30000,
       "percentSold": 6.2,
       "ticketPrice": null,
@@ -138,9 +138,9 @@
       "title": "Plouise Advent Calendar",
       "url": "https://marvalouscompetitions.co.uk/competition/plouise-advent-calendar",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/766/01M45HD1V3GHH5Z82XN2T3RQJD.jpg",
-      "ticketsSold": 631,
+      "ticketsSold": 684,
       "totalTickets": 75000,
-      "percentSold": 0.8,
+      "percentSold": 0.9,
       "ticketPrice": null,
       "instantWins": 4
     }
