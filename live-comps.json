@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-07T20:01:09.146Z",
-  "todaysWinnerCount": 79,
+  "updatedAt": "2026-10-08T00:09:33.618Z",
+  "todaysWinnerCount": 0,
   "nextLiveAt": "2026-10-18T13:35:00.000Z",
   "count": 14,
   "competitions": [
@@ -28,9 +28,9 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 58010,
+      "ticketsSold": 58100,
       "totalTickets": 300000,
-      "percentSold": 19.3,
+      "percentSold": 19.4,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -38,9 +38,9 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 65523,
+      "ticketsSold": 65666,
       "totalTickets": 300000,
-      "percentSold": 21.8,
+      "percentSold": 21.9,
       "ticketPrice": null,
       "instantWins": 50100
     },
@@ -58,7 +58,7 @@
       "title": "Marvs Ding Dong Giveaway",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-ding-dong-giveaway",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/760/01M3XXBR8H64FCJM9S8QY4HBAN.jpg",
-      "ticketsSold": 90,
+      "ticketsSold": 91,
       "totalTickets": 3000,
       "percentSold": 3,
       "ticketPrice": null,
@@ -108,9 +108,9 @@
       "title": "Chloes Lucky Gems",
       "url": "https://marvalouscompetitions.co.uk/competition/chloes-lucky-gems",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/768/01M45V34HBMWQERVKD4JKYCPDF.jpg",
-      "ticketsSold": 511,
+      "ticketsSold": 555,
       "totalTickets": 41000,
-      "percentSold": 1.2,
+      "percentSold": 1.4,
       "ticketPrice": null,
       "instantWins": 75
     },
