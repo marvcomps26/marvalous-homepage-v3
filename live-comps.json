@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-08T23:56:33.381Z",
-  "todaysWinnerCount": 0,
+  "updatedAt": "2026-10-09T06:00:38.059Z",
+  "todaysWinnerCount": 14,
   "nextLiveAt": "2026-10-18T13:35:00.000Z",
   "count": 14,
   "competitions": [
@@ -28,9 +28,9 @@
       "title": "Marvs Trick Competition",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-competition",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/655/01M1KWHERJ4FMV7Q0FMAVQ2675.jpg",
-      "ticketsSold": 59500,
+      "ticketsSold": 59570,
       "totalTickets": 300000,
-      "percentSold": 19.8,
+      "percentSold": 19.9,
       "ticketPrice": null,
       "instantWins": null
     },
@@ -38,9 +38,9 @@
       "title": "Marvs Trick Or Joannes Treat",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-trick-or-joannes-treat",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/668/01M1NZ8AJY9WEKKTBCV999Z0JD.jpg",
-      "ticketsSold": 67265,
+      "ticketsSold": 67360,
       "totalTickets": 300000,
-      "percentSold": 22.4,
+      "percentSold": 22.5,
       "ticketPrice": null,
       "instantWins": 50100
     },
@@ -68,7 +68,7 @@
       "title": "Marvs Gta 6 Bundle",
       "url": "https://marvalouscompetitions.co.uk/competition/marvs-gta-6-bundle",
       "image": "https://static.rafflex.io/marvalouscompetitions.co.uk/639/01M143R3HJ31GT3F63CNXGA8G8.jpg",
-      "ticketsSold": 19310,
+      "ticketsSold": 19360,
       "totalTickets": 150000,
       "percentSold": 12.9,
       "ticketPrice": null,
